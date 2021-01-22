@@ -1,27 +1,27 @@
-# [React Reactions](http://casesandberg.github.io/react-reactions/)
+# React Reactions
 
-* **4 Different Selectors** - Slack, Facebook, Pokemon and Github
-* **4 Different Counters** - Github, Youtube, Facebook and Slack
+- **4 Different Selectors** - Slack, Facebook, Pokemon and Github
+- **4 Different Counters** - Github, Youtube, Facebook and Slack
 
 Install via npm:
 
-```
-npm install react-reactions --save
+```sh
+npm i @charkour/react-reactions
 ```
 
-# Selectors
+## Selectors
 
-### Slack
-```
-import React from 'react';
-import { SlackSelector } from 'react-reactions';
+### Slack Selector
+
+```tsx
+import React from "react";
+import { SlackSelector } from "@charkour/react-reactions";
 
 const Component = () => {
-  return (
-    <SlackSelector />
-  )
-}
+  return <SlackSelector />;
+};
 ```
+
 **Props:**
 
 `active`: String of active tab. Defaults to `mine`
@@ -36,17 +36,17 @@ const Component = () => {
 
 ---
 
-### Github
-```
-import React from 'react';
-import { GithubSelector } from 'react-reactions';
+### Github Selector
+
+```tsx
+import React from "react";
+import { GithubSelector } from "@charkour/react-reactions";
 
 const Component = () => {
-  return (
-    <GithubSelector />
-  )
-}
+  return <GithubSelector />;
+};
 ```
+
 **Props:**
 
 `reactions`: Array of emoji to dispay. Defaults to `['👍', '👎', '😄', '🎉', '😕', '❤️']`
@@ -55,17 +55,17 @@ const Component = () => {
 
 ---
 
-### Facebook
-```
-import React from 'react';
-import { FacebookSelector } from 'react-reactions';
+### Facebook Selector
+
+```tsx
+import React from "react";
+import { FacebookSelector } from "@charkour/react-reactions";
 
 const Component = () => {
-  return (
-    <FacebookSelector />
-  )
-}
+  return <FacebookSelector />;
+};
 ```
+
 **Props:**
 
 `reactions`: Array of strings for reactions to display. Defaults to `['like', 'love', 'haha', 'wow', 'sad', 'angry']`
@@ -76,17 +76,17 @@ const Component = () => {
 
 ---
 
-### Pokemon
-```
-import React from 'react';
-import { PokemonSelector } from 'react-reactions';
+### Pokemon Selector
+
+```tsx
+import React from "react";
+import { PokemonSelector } from "@charkour/react-reactions";
 
 const Component = () => {
-  return (
-    <PokemonSelector />
-  )
-}
+  return <PokemonSelector />;
+};
 ```
+
 **Props:**
 
 `reactions`: Array of strings for reactions to display. Defaults to `['like', 'love', 'haha', 'wow', 'sad', 'angry']`
@@ -97,24 +97,24 @@ const Component = () => {
 
 ---
 
-# Counters
+## Counters
 
-### Github
-```
-import React from 'react';
-import { GithubCounter } from 'react-reactions';
+### Github Counter
+
+```tsx
+import React from "react";
+import { GithubCounter } from "@charkour/react-reactions";
 
 const Component = () => {
-  return (
-    <GithubCounter />
-  )
-}
+  return <GithubCounter />;
+};
 ```
+
 **Props:**
 
 `counters`: Array of counter objects structured such that:
 
-```
+```tsx
 {
   emoji: '👍', // String emoji reaction
   by: 'case', // String of persons name
@@ -129,17 +129,17 @@ const Component = () => {
 
 ---
 
-### Youtube
-```
-import React from 'react';
-import { YoutubeCounter } from 'react-reactions';
+### Youtube Counter
+
+```tsx
+import React from "react";
+import { YoutubeCounter } from "@charkour/react-reactions";
 
 const Component = () => {
-  return (
-    <YoutubeCounter />
-  )
-}
+  return <YoutubeCounter />;
+};
 ```
+
 **Props:**
 
 `like`: String number of likes
@@ -152,22 +152,22 @@ const Component = () => {
 
 ---
 
-### Facebook
-```
-import React from 'react';
-import { FacebookCounter } from 'react-reactions';
+### Facebook Counter
+
+```tsx
+import React from "react";
+import { FacebookCounter } from "@charkour/react-reactions";
 
 const Component = () => {
-  return (
-    <FacebookCounter />
-  )
-}
+  return <FacebookCounter />;
+};
 ```
+
 **Props:**
 
 `counters`: Array of counter objects structured such that:
 
-```
+```tsx
 {
   emoji: 'like', // String name of reaction
   by: 'Case Sandberg', // String of persons name
@@ -184,22 +184,22 @@ const Component = () => {
 
 ---
 
-### Slack
-```
-import React from 'react';
-import { SlackCounter } from 'react-reactions';
+### Slack Counter
+
+```tsx
+import React from "react";
+import { SlackCounter } from "@charkour/react-reactions";
 
 const Component = () => {
-  return (
-    <SlackCounter />
-  )
-}
+  return <SlackCounter />;
+};
 ```
+
 **Props:**
 
 `counters`: Array of counter objects structured such that:
 
-```
+```tsx
 {
   emoji: '🗿', // String emoji reaction
   by: 'case', // String of persons name

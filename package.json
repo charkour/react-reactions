@@ -12,14 +12,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/casesandberg/react-reactions.git"
+    "url": "git+https://github.com/charkour/react-reactions.git"
   },
   "author": "case <case@casesandberg.com>",
+  "contributors": ["charkour"],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/casesandberg/react-reactions/issues"
+    "url": "https://github.com/charkour/react-reactions/issues"
   },
-  "homepage": "https://casesandberg.github.io/react-reactions/",
+  "homepage": "https://github.com/charkour/react-reactions",
   "keywords": [
     "react",
     "reactions",
