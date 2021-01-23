@@ -1,7 +1,7 @@
 {
   "name": "@charkour/react-reactions",
   "version": "0.1.4",
-  "description": "Reaction pickers and counters from Slack, Pokemon, Github, Facebook & Youtube",
+  "description": "😲 Reaction pickers and counters from Slack, Pokemon, Github, Facebook & Youtube",
   "main": "lib/index.js",
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.config.dev.js --port 2570 --quiet",

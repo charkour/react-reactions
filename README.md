@@ -1,4 +1,22 @@
-# React Reactions
+# 😲 React Reactions
+
+This originated as a fork of [casesandberg/react-reactions](https://github.com/casesandberg/react-reactions) which is been modified under the MIT license to include additional features.
+
+## New Features
+
+- [x] Fixed security vulnerabilities
+- [x] A published [npm package](https://www.npmjs.com/package/@charkour/react-reactions) which works with React v17 and Next v10.
+
+## Road Map
+
+- [ ] Typescript Types
+- [ ] Fix all security vulnerabilities
+- [ ] Remove all dependencies
+- [ ] Update to use newest React syntax
+- [ ] Remove source files from npm package
+- [ ] Update current Selectors and Counter to match 2021 styles
+- [ ] Add Discord Selector and Counter
+- [ ] More??? Suggest a feature on [Github Issues](https://github.com/charkour/react-reactions/issues)
 
 - **4 Different Selectors** - Slack, Facebook, Pokemon and Github
 - **4 Different Counters** - Github, Youtube, Facebook and Slack
