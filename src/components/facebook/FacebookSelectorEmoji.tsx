@@ -1,7 +1,7 @@
 import React from 'react';
 import { active, Hover } from '../../helpers';
 
-interface FacebookSelectorEmojiProps {
+export interface FacebookSelectorEmojiProps {
   icon: string;
   label: string;
   onSelect: (label: string) => void;
