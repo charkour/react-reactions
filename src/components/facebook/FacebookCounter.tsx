@@ -1,5 +1,5 @@
 import React from 'react';
-import { listOfNames } from '../../helpers/strings';
+import { groupBy, listOfNames } from '../../helpers';
 import FacebookCounterReaction from './FacebookCounterReaction';
 
 export interface CounterObject {
@@ -15,11 +15,18 @@ export interface FacebookCounterProps {
   bg: string;
 }
 
-var groupBy = function(xs: any, key: string) {
-  return xs.reduce(function(rv: any, x: any) {
-    (rv[x[key]] = rv[x[key]] || []).push(x);
-    return rv;
-  }, {});
+const counterStyle = {
+  display: 'flex',
+  cursor: 'pointer',
+  color: '#365899',
+  fontFamily: `"San Francisco", -apple-system, BlinkMacSystemFont,
+        ".SFNSText-Regular", sans-serif`,
+  fontSize: '12px',
+  fontWeight: 500,
+};
+const nameStyle = {
+  paddingLeft: '4px',
+  marginTop: '2px',
 };
 
 export const FacebookCounter: React.VFC<FacebookCounterProps> = ({
@@ -29,24 +36,6 @@ export const FacebookCounter: React.VFC<FacebookCounterProps> = ({
   onClick,
   bg,
 }) => {
-  // const styles = reactCSS({
-  //   default: {
-  //     counter: {
-  //       display: 'flex',
-  //       cursor: 'pointer',
-  //       color: '#365899',
-  //       fontFamily: `"San Francisco", -apple-system, BlinkMacSystemFont,
-  //         ".SFNSText-Regular", sans-serif`,
-  //       fontSize: '12px',
-  //       fontWeight: '500',
-  //     },
-  //     name: {
-  //       paddingLeft: '4px',
-  //       marginTop: '2px',
-  //     },
-  //   },
-  // });
-
   const groups = groupBy(counters, 'emoji');
   const names = counters.map(({ by }: CounterObject) => {
     return by;
@@ -67,18 +56,7 @@ export const FacebookCounter: React.VFC<FacebookCounterProps> = ({
   nameString.push(`${names.length - nameString.length} others`);
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        cursor: 'pointer',
-        color: '#365899',
-        fontFamily: `"San Francisco", -apple-system, BlinkMacSystemFont,
-        ".SFNSText-Regular", sans-serif`,
-        fontSize: '12px',
-        fontWeight: 500,
-      }}
-      onClick={onClick}
-    >
+    <div style={counterStyle} onClick={onClick}>
       {Object.keys(groups).map((reaction, i, reactions) => {
         return (
           <FacebookCounterReaction
@@ -89,14 +67,7 @@ export const FacebookCounter: React.VFC<FacebookCounterProps> = ({
           />
         );
       })}
-      <div
-        style={{
-          paddingLeft: '4px',
-          marginTop: '2px',
-        }}
-      >
-        {listOfNames(nameString)}
-      </div>
+      <div style={nameStyle}>{listOfNames(nameString)}</div>
     </div>
   );
 };
