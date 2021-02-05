@@ -7,39 +7,37 @@ export interface FacebookSelectorEmojiProps {
   onSelect: (label: string) => void;
 }
 
-export const FacebookSelectorEmoji: React.VFC<FacebookSelectorEmojiProps> = ({
-  icon,
-  label,
-  onSelect,
-}) => {
-  const iconStyle = React.useMemo(() => {
-    return {
-      paddingBottom: '100%',
-      backgroundImage: `url(${icon})`,
-      backgroundSize: '100% 100%',
-      transformOrigin: 'bottom',
-      cursor: 'pointer',
-      transition: '200ms transform cubic-bezier(0.23, 1, 0.32, 1)',
+export const FacebookSelectorEmoji: React.VFC<FacebookSelectorEmojiProps> = active(
+  ({ icon, label, onSelect }) => {
+    const iconStyle = React.useMemo(() => {
+      return {
+        paddingBottom: '100%',
+        backgroundImage: `url(${icon})`,
+        backgroundSize: '100% 100%',
+        transformOrigin: 'bottom',
+        cursor: 'pointer',
+        transition: '200ms transform cubic-bezier(0.23, 1, 0.32, 1)',
+      };
+    }, [icon]);
+
+    const handleClick = () => {
+      onSelect && onSelect(label);
     };
-  }, [icon]);
 
-  const handleClick = () => {
-    onSelect && onSelect(label);
-  };
-
-  return (
-    <Hover style={wrapStyle}>
-      <HoverStyle hoverStyle={labelStyleHover} style={labelStyle}>
-        {label}
-      </HoverStyle>
-      <HoverStyle
-        hoverStyle={iconStyleHover}
-        style={iconStyle}
-        onClick={handleClick}
-      />
-    </Hover>
-  );
-};
+    return (
+      <Hover style={wrapStyle}>
+        <HoverStyle hoverStyle={labelStyleHover} style={labelStyle}>
+          {label}
+        </HoverStyle>
+        <HoverStyle
+          hoverStyle={iconStyleHover}
+          style={iconStyle}
+          onClick={handleClick}
+        />
+      </Hover>
+    );
+  }
+);
 
 const wrapStyle: React.CSSProperties = {
   padding: '5px',
@@ -66,4 +64,4 @@ const labelStyle: React.CSSProperties = {
 };
 const iconStyleHover = { transform: 'scale(1.3)' };
 
-export default active(FacebookSelectorEmoji);
+export default FacebookSelectorEmoji;
