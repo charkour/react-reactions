@@ -1,22 +1,24 @@
 import React from 'react';
+import { HoverContext } from './useHover';
 
-interface Hover extends React.HTMLAttributes<HTMLDivElement> {
-  hoverStyle: React.CSSProperties;
-  isHovered: boolean;
-}
-
-// https://stackoverflow.com/a/65886428/9931154
-export const Hover: React.FC<Hover> = ({
-  style = {},
-  hoverStyle,
+// Wrapper that keeps track of weather or not the component is being hovered
+export const Hover: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   children,
-  isHovered,
   ...rest
 }) => {
-  const calculatedStyle = { ...style, ...(isHovered ? hoverStyle : {}) };
+  const [isHovered, setHovered] = React.useState(false);
+
   return (
-    <div {...rest} style={calculatedStyle}>
-      {children}
-    </div>
+    <HoverContext.Provider value={isHovered}>
+      <div
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        {...rest}
+      >
+        {children}
+      </div>
+    </HoverContext.Provider>
   );
 };
+
+export default Hover;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { active, Hover } from '../../helpers';
+import { active, Hover, HoverStyle } from '../../helpers';
 
 export interface FacebookSelectorEmojiProps {
   icon: string;
@@ -12,8 +12,6 @@ export const FacebookSelectorEmoji: React.VFC<FacebookSelectorEmojiProps> = ({
   label,
   onSelect,
 }) => {
-  const [isHovered, setHovered] = React.useState(false);
-
   const iconStyle = React.useMemo(() => {
     return {
       paddingBottom: '100%',
@@ -30,26 +28,16 @@ export const FacebookSelectorEmoji: React.VFC<FacebookSelectorEmojiProps> = ({
   };
 
   return (
-    <div
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      id="wrap"
-      style={wrapStyle}
-    >
-      <Hover
-        isHovered={isHovered}
-        hoverStyle={labelStyleHover}
-        style={labelStyle}
-      >
+    <Hover style={wrapStyle}>
+      <HoverStyle hoverStyle={labelStyleHover} style={labelStyle}>
         {label}
-      </Hover>
-      <Hover
-        isHovered={isHovered}
+      </HoverStyle>
+      <HoverStyle
         hoverStyle={iconStyleHover}
         style={iconStyle}
         onClick={handleClick}
       />
-    </div>
+    </Hover>
   );
 };
 
