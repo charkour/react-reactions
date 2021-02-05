@@ -17,7 +17,7 @@ const wrapStyle = {
   display: 'flex',
 };
 
-export const FacebookSelector: React.FC<FacebookSelectorProps> = ({
+export const FacebookSelector: React.VFC<FacebookSelectorProps> = ({
   iconSize,
   reactions,
   variant,
