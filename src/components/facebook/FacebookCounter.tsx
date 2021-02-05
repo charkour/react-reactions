@@ -1,11 +1,6 @@
 import React from 'react';
-import { groupBy, listOfNames } from '../../helpers';
+import { CounterObject, groupBy, listOfNames } from '../../helpers';
 import FacebookCounterReaction from './FacebookCounterReaction';
-
-export interface CounterObject {
-  emoji: string;
-  by: string;
-}
 
 export interface FacebookCounterProps {
   counters: CounterObject[];
