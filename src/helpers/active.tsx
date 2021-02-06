@@ -15,7 +15,7 @@ export const active = (Component: React.ElementType) => {
 
     return (
       <div onMouseDown={handleMouseDown} onMouseUp={handleMouseUp}>
-        <Component {...props} {...active} />
+        <Component {...props} active={active} />
       </div>
     );
   };
