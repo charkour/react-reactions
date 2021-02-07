@@ -8,6 +8,7 @@ export interface FacebookCounterProps {
   important: string[];
   onClick: () => void;
   bg: string;
+  variant?: 'facebook' | 'pokemon';
 }
 
 const counterStyle = {
@@ -30,6 +31,7 @@ export const FacebookCounter: React.VFC<FacebookCounterProps> = ({
   important,
   onClick,
   bg,
+  variant = 'facebook',
 }) => {
   const groups = groupBy(counters, 'emoji');
   const names = counters.map(({ by }: CounterObject) => {
@@ -59,6 +61,7 @@ export const FacebookCounter: React.VFC<FacebookCounterProps> = ({
             reaction={reaction}
             index={reactions.length - i}
             bg={bg}
+            variant={variant}
           />
         );
       })}
@@ -70,6 +73,7 @@ export const FacebookCounter: React.VFC<FacebookCounterProps> = ({
 FacebookCounter.defaultProps = {
   important: [],
   bg: '#fff',
+  variant: 'facebook',
 };
 
 export default FacebookCounter;

@@ -5,7 +5,7 @@ import FacebookSelectorEmoji from './FacebookSelectorEmoji';
 export interface FacebookSelectorProps {
   iconSize: number;
   reactions: string[];
-  variant: string;
+  variant: 'facebook' | 'pokemon';
   onSelect: (label: string) => void;
 }
 
