@@ -2,7 +2,7 @@ import React from 'react';
 
 // HOC that keeps track of weather or not the component is being clicked.
 // https://stackoverflow.com/a/53453431/9931154
-export const active = (Component: React.ElementType) => {
+export const withActive = (Component: React.ElementType) => {
   return <T,>({ ...props }: T) => {
     const [active, setActive] = React.useState(false);
 
@@ -21,4 +21,4 @@ export const active = (Component: React.ElementType) => {
   };
 };
 
-export default active;
+export default withActive;

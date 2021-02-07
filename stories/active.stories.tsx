@@ -1,12 +1,12 @@
 import { Meta, Story } from '@storybook/react';
 import React from 'react';
-import active from '../src/helpers/active';
+import withActive from '../src/helpers/withActive';
 
 interface ThingProps {
   message: string;
 }
 
-const Thing = active(({ message }: ThingProps) => {
+const Thing = withActive(({ message }: ThingProps) => {
   return <div>{message}</div>;
 });
 

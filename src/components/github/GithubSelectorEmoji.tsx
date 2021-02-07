@@ -1,5 +1,5 @@
 import React from 'react';
-import { active, Hover, HoverStyle } from '../../helpers';
+import { Hover, HoverStyle, withActive } from '../../helpers';
 
 export interface GithubSelectorEmojiProps {
   onSelect: (shortCode: string) => void;
@@ -7,7 +7,7 @@ export interface GithubSelectorEmojiProps {
   active?: boolean;
 }
 
-export const GithubSelectorEmoji: React.VFC<GithubSelectorEmojiProps> = active(
+export const GithubSelectorEmoji: React.VFC<GithubSelectorEmojiProps> = withActive(
   ({ onSelect, shortCode, active = false }) => {
     const handleClick = () => {
       onSelect(shortCode);

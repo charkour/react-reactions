@@ -1,5 +1,5 @@
 import React from 'react';
-import { active, Hover, HoverStyle } from '../../helpers';
+import { Hover, HoverStyle, withActive } from '../../helpers';
 
 export interface FacebookSelectorEmojiProps {
   icon: string;
@@ -7,7 +7,7 @@ export interface FacebookSelectorEmojiProps {
   onSelect: (label: string) => void;
 }
 
-export const FacebookSelectorEmoji: React.VFC<FacebookSelectorEmojiProps> = active(
+export const FacebookSelectorEmoji: React.VFC<FacebookSelectorEmojiProps> = withActive(
   ({ icon, label, onSelect }) => {
     const iconStyle = React.useMemo(() => {
       return {

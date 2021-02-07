@@ -1,4 +1,3 @@
-export { default as active } from './active';
 export * from './groupBy';
 export { default as Hover } from './Hover';
 export * from './HoverStyle';
@@ -7,3 +6,4 @@ export * from './interfaces';
 export * from './slack';
 export * from './strings';
 export * from './useHover';
+export { default as withActive } from './withActive';
