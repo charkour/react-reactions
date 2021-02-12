@@ -7,7 +7,7 @@
     "start": "webpack-dev-server --config ./webpack.config.dev.js --port 2570 --quiet",
     "docs-dist": "webpack --config webpack.config.prod.js",
     "lib": "npm run clean && babel src -d lib",
-    "clean": "rmdir /s /q lib && mkdir lib",
+    "clean": "rm -rf lib && mkdir lib",
     "prepare": "npm run lib"
   },
   "repository": {

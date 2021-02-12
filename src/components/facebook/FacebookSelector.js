@@ -9,11 +9,15 @@ export const FacebookSelector = ({ iconSize, reactions, variant, onSelect }) => 
   const styles = reactCSS({
     'default': {
       selector: {
-        backgroundColor: '#fff',
-        borderRadius: '50px',
-        padding: '2px',
-        boxShadow: '0 0 0 1px rgba(0, 0, 0, .05), 0 1px 2px rgba(0, 0, 0, .15)',
-        display: 'flex',
+        overflowY: "none",
+        overflowX: "scroll",
+        cursor: "pointer",
+        position: "absolute",
+        bottom: "10px",
+        color: "white",
+        fontSize: "large",
+        left:"82%",
+        height:"150px",
       },
       icon: {
         width: `${ iconSize + 10 }px`,
