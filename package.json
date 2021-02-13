@@ -54,7 +54,7 @@
     "trailingComma": "es5"
   },
   "devDependencies": {
-    "@babel/core": "7.12.10",
+    "@babel/core": "7.12.16",
     "@size-limit/preset-small-lib": "4.9.2",
     "@storybook/addon-essentials": "6.1.15",
     "@storybook/addon-info": "5.3.21",
