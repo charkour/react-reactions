@@ -1,28 +1,46 @@
 {
-  "version": "0.1.0",
+  "name": "@charkour/react-reactions",
+  "version": "0.1.4",
+  "description": "😲 Reaction pickers and counters from Slack, Pokemon, GitHub, Facebook & YouTube",
+  "keywords": [
+    "react",
+    "reactions",
+    "reaction picker",
+    "react-component",
+    "reaction-picker",
+    "slack",
+    "pokemon",
+    "github",
+    "facebook",
+    "youtube"
+  ],
+  "homepage": "https://github.com/charkour/react-reactions",
+  "bugs": {
+    "url": "https://github.com/charkour/react-reactions/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/charkour/react-reactions.git"
+  },
   "license": "MIT",
+  "author": "Charles Kornoelje",
   "main": "dist/index.js",
+  "module": "dist/react-reactions.esm.js",
   "typings": "dist/index.d.ts",
   "files": [
     "dist",
     "src"
   ],
-  "engines": {
-    "node": ">=10"
-  },
   "scripts": {
-    "start": "tsdx watch",
+    "analyze": "size-limit --why",
     "build": "tsdx build",
-    "test": "tsdx test --passWithNoTests",
+    "build-storybook": "build-storybook",
     "lint": "tsdx lint",
     "prepare": "tsdx build",
     "size": "size-limit",
-    "analyze": "size-limit --why",
+    "start": "tsdx watch",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
-  },
-  "peerDependencies": {
-    "react": ">=16"
+    "test": "tsdx test --passWithNoTests"
   },
   "husky": {
     "hooks": {
@@ -35,19 +53,6 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "react-reactions",
-  "author": "Charles Kornoelje",
-  "module": "dist/react-reactions.esm.js",
-  "size-limit": [
-    {
-      "path": "dist/react-reactions.cjs.production.min.js",
-      "limit": "10 KB"
-    },
-    {
-      "path": "dist/react-reactions.esm.js",
-      "limit": "10 KB"
-    }
-  ],
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@size-limit/preset-small-lib": "^4.9.2",
@@ -60,6 +65,7 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "babel-loader": "^8.2.2",
+    "eslint-plugin-react-hooks": "2.5.1",
     "husky": "^4.3.8",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -68,5 +74,21 @@
     "tsdx": "^0.14.1",
     "tslib": "^2.1.0",
     "typescript": "^4.1.3"
-  }
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "size-limit": [
+    {
+      "path": "dist/react-reactions.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/react-reactions.esm.js",
+      "limit": "10 KB"
+    }
+  ]
 }
