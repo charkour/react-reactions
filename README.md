@@ -1,19 +1,265 @@
-# TSDX React w/ Storybook User Guide
+# ![react-reactions](./assets/react-reactions-media.png)
 
-Congrats! You just saved yourself hours of work by bootstrapping this project with TSDX. Let’s get you oriented with what’s here and how to use it.
+- **4 Different Selectors** - Slack, Facebook, Pokemon and GitHub
+- **5 Different Counters** - GitHub, YouTube, Facebook, Pokemon, and Slack
 
-> This TSDX setup is meant for developing React component libraries (not apps!) that can be published to NPM. If you’re looking to build a React-based app, you should use `create-react-app`, `razzle`, `nextjs`, `gatsby`, or `react-static`.
+Install [via npm](https://www.npmjs.com/package/@charkour/react-reactions):
 
-> If you’re new to TypeScript and React, checkout [this handy cheatsheet](https://github.com/sw-yx/react-typescript-cheatsheet/)
+```sh
+npm i @charkour/react-reactions
+```
 
-## Commands
+> This originated as a fork of [casesandberg/react-reactions](https://github.com/casesandberg/react-reactions) which is been modified under the MIT license to include additional features.
 
-TSDX scaffolds your new library inside `/src`, and also sets up a [Parcel-based](https://parceljs.org) playground for it inside `/example`.
+## New Features
 
-The recommended workflow is to run TSDX in one terminal:
+- [x] Fixed security vulnerabilities
+- [x] CJS and ESM support
+- [x] Zero dependencies
+- [x] Built in Typescript and modern React (with [TSDX](https://github.com/formium/tsdx))
+- [x] Works with React 16.8+ and Next 10
+
+## Road Map
+
+- [ ] Add ability to pass **custom icons**
+- [ ] Update current Selectors and Counter to match 2021 styles
+- [ ] Add Discord Selector and Counter
+- [ ] Fix all security vulnerabilities
+- [ ] More??? Suggest a feature on [Github Issues](https://github.com/charkour/react-reactions/issues)
+
+## Selectors
+
+### Slack Selector
+
+```tsx
+import React from 'react';
+import { SlackSelector } from '@charkour/react-reactions';
+
+const Component = () => {
+  return <SlackSelector />;
+};
+```
+
+**Props:**
+
+`active`: String of active tab. Defaults to `mine`
+
+`scrollHeight`: String pixel height of scroll container. Defaults to `270px`
+
+`removeEmojis`: Array of emojis to remove from emoji list
+
+`frequent`: Array of emojis to set Frequently Used. Defaults to `['👍', '🐉', '🙌', '🗿', '😊', '🐬', '😹', '👻', '🚀', '🚁', '🏇', '🇨🇦']`
+
+`onSelect`: Function callback when emoji is selected
+
+---
+
+### Github Selector
+
+```tsx
+import React from 'react';
+import { GithubSelector } from '@charkour/react-reactions';
+
+const Component = () => {
+  return <GithubSelector />;
+};
+```
+
+**Props:**
+
+`reactions`: Array of emoji to dispay. Defaults to `['👍', '👎', '😄', '🎉', '😕', '❤️']`
+
+`onSelect`: Function callback when emoji is selected
+
+---
+
+### Facebook Selector
+
+```tsx
+import React from 'react';
+import { FacebookSelector } from '@charkour/react-reactions';
+
+const Component = () => {
+  return <FacebookSelector />;
+};
+```
+
+**Props:**
+
+`reactions`: Array of strings for reactions to display. Defaults to `['like', 'love', 'haha', 'wow', 'sad', 'angry']`
+
+`iconSize`: String icon pixel size. Defaults to `38px`
+
+`onSelect`: Function callback when emoji is selected
+
+---
+
+### Pokemon Selector
+
+```tsx
+import React from 'react';
+import { PokemonSelector } from '@charkour/react-reactions';
+
+const Component = () => {
+  return <PokemonSelector />;
+};
+```
+
+**Props:**
+
+`reactions`: Array of strings for reactions to display. Defaults to `['like', 'love', 'haha', 'wow', 'sad', 'angry']`
+
+`iconSize`: String icon pixel size. Defaults to `38px`
+
+`onSelect`: Function callback when emoji is selected
+
+---
+
+## Counters
+
+### Github Counter
+
+```tsx
+import React from 'react';
+import { GithubCounter } from '@charkour/react-reactions';
+
+const Component = () => {
+  return <GithubCounter />;
+};
+```
+
+**Props:**
+
+`counters`: Array of counter objects structured such that:
+
+```tsx
+{
+  emoji: '👍', // String emoji reaction
+  by: 'case', // String of persons name
+}
+```
+
+`user`: String name of user so that user displays as `You`
+
+`onSelect`: Function callback when emoji is selected
+
+`onAdd`: Function callback when add reaction is clicked
+
+---
+
+### Youtube Counter
+
+```tsx
+import React from 'react';
+import { YoutubeCounter } from '@charkour/react-reactions';
+
+const Component = () => {
+  return <YoutubeCounter />;
+};
+```
+
+**Props:**
+
+`like`: String number of likes
+
+`dislike`: String number of dislikes
+
+`onLikeClick`: Function callback when like is clicked
+
+`onDislikeClick`: Function callback when dislike is clicked
+
+---
+
+### Facebook Counter
+
+```tsx
+import React from 'react';
+import { FacebookCounter } from '@charkour/react-reactions';
+
+const Component = () => {
+  return <FacebookCounter />;
+};
+```
+
+**Props:**
+
+`counters`: Array of counter objects structured such that:
+
+```tsx
+{
+  emoji: 'like', // String name of reaction
+  by: 'Case Sandberg', // String of persons name
+}
+```
+
+---
+
+### Pokemon Counter
+
+```tsx
+import React from 'react';
+import { PokemonCounter } from '@charkour/react-reactions';
+
+const Component = () => {
+  return <PokemonCounter />;
+};
+```
+
+**Props:**
+
+`counters`: Array of counter objects structured such that:
+
+```tsx
+{
+  emoji: 'like', // String name of reaction
+  by: 'Charles Kornoelje', // String of persons name
+}
+```
+
+`user`: String name of user so that user displays as `You`
+
+`important`: Array of strings for important users to display their name
+
+`bg`: String of hex color for outline of overlapping reactions. Defaults to `#fff`
+
+`onClick`: Function callback when clicked
+
+---
+
+### Slack Counter
+
+```tsx
+import React from 'react';
+import { SlackCounter } from '@charkour/react-reactions';
+
+const Component = () => {
+  return <SlackCounter />;
+};
+```
+
+**Props:**
+
+`counters`: Array of counter objects structured such that:
+
+```tsx
+{
+  emoji: '🗿', // String emoji reaction
+  by: 'case', // String of persons name
+}
+```
+
+`user`: String name of user so that user displays as `You`
+
+`onSelect`: Function callback when emoji is selected
+
+`onAdd`: Function callback when add reaction is clicked
+
+---
+
+## Development
 
 ```bash
-npm start # or yarn start
+npm start
 ```
 
 This builds to `/dist` and runs the project in watch mode so any edits you save inside `src` causes a rebuild to `/dist`.
@@ -25,7 +271,7 @@ Then run either Storybook or the example playground:
 Run inside another terminal:
 
 ```bash
-yarn storybook
+npm run storybook
 ```
 
 This loads the stories from `./stories`.
@@ -38,8 +284,8 @@ Then run the example inside another:
 
 ```bash
 cd example
-npm i # or yarn to install dependencies
-npm start # or yarn start
+npm i
+npm start
 ```
 
 The default example imports and live reloads whatever is in `/dist`, so if you are seeing an out of date component, make sure TSDX is running in watch mode like we recommend above. **No symlinking required**, we use [Parcel's aliasing](https://parceljs.org/module_resolution.html#aliases).
@@ -56,49 +302,6 @@ Code quality is set up for you with `prettier`, `husky`, and `lint-staged`. Adju
 
 Jest tests are set up to run with `npm test` or `yarn test`.
 
-### Bundle analysis
-
-Calculates the real cost of your library using [size-limit](https://github.com/ai/size-limit) with `npm run size` and visulize it with `npm run analyze`.
-
-#### Setup Files
-
-This is the folder structure we set up for you:
-
-```txt
-/example
-  index.html
-  index.tsx       # test your component here in a demo app
-  package.json
-  tsconfig.json
-/src
-  index.tsx       # EDIT THIS
-/test
-  blah.test.tsx   # EDIT THIS
-/stories
-  Thing.stories.tsx # EDIT THIS
-/.storybook
-  main.js
-  preview.js
-.gitignore
-package.json
-README.md         # EDIT THIS
-tsconfig.json
-```
-
-#### React Testing Library
-
-We do not set up `react-testing-library` for you yet, we welcome contributions and documentation on this.
-
-### Rollup
-
-TSDX uses [Rollup](https://rollupjs.org) as a bundler and generates multiple rollup configs for various module formats and build settings. See [Optimizations](#optimizations) for details.
-
-### TypeScript
-
-`tsconfig.json` is set up to interpret `dom` and `esnext` types, as well as `react` for `jsx`. Adjust according to your needs.
-
-## Continuous Integration
-
 ### GitHub Actions
 
 Two actions are added by default:
@@ -106,76 +309,6 @@ Two actions are added by default:
 - `main` which installs deps w/ cache, lints, tests, and builds on all pushes against a Node and OS matrix
 - `size` which comments cost comparison of your library on every pull request using [size-limit](https://github.com/ai/size-limit)
 
-## Optimizations
+---
 
-Please see the main `tsdx` [optimizations docs](https://github.com/palmerhq/tsdx#optimizations). In particular, know that you can take advantage of development-only optimizations:
-
-```js
-// ./types/index.d.ts
-declare var __DEV__: boolean;
-
-// inside your code...
-if (__DEV__) {
-  console.log('foo');
-}
-```
-
-You can also choose to install and use [invariant](https://github.com/palmerhq/tsdx#invariant) and [warning](https://github.com/palmerhq/tsdx#warning) functions.
-
-## Module Formats
-
-CJS, ESModules, and UMD module formats are supported.
-
-The appropriate paths are configured in `package.json` and `dist/index.js` accordingly. Please report if any issues are found.
-
-## Deploying the Example Playground
-
-The Playground is just a simple [Parcel](https://parceljs.org) app, you can deploy it anywhere you would normally deploy that. Here are some guidelines for **manually** deploying with the Netlify CLI (`npm i -g netlify-cli`):
-
-```bash
-cd example # if not already in the example folder
-npm run build # builds to dist
-netlify deploy # deploy the dist folder
-```
-
-Alternatively, if you already have a git repo connected, you can set up continuous deployment with Netlify:
-
-```bash
-netlify init
-# build command: yarn build && cd example && yarn && yarn build
-# directory to deploy: example/dist
-# pick yes for netlify.toml
-```
-
-## Named Exports
-
-Per Palmer Group guidelines, [always use named exports.](https://github.com/palmerhq/typescript#exports) Code split inside your React app instead of your React library.
-
-## Including Styles
-
-There are many ways to ship styles, including with CSS-in-JS. TSDX has no opinion on this, configure how you like.
-
-For vanilla CSS, you can include it at the root directory and add it to the `files` section in your `package.json`, so that it can be imported separately by your users and run through their bundler's loader.
-
-## Publishing to NPM
-
-We recommend using [np](https://github.com/sindresorhus/np).
-
-## Usage with Lerna
-
-When creating a new package with TSDX within a project set up with Lerna, you might encounter a `Cannot resolve dependency` error when trying to run the `example` project. To fix that you will need to make changes to the `package.json` file _inside the `example` directory_.
-
-The problem is that due to the nature of how dependencies are installed in Lerna projects, the aliases in the example project's `package.json` might not point to the right place, as those dependencies might have been installed in the root of your Lerna project.
-
-Change the `alias` to point to where those packages are actually installed. This depends on the directory structure of your Lerna project, so the actual path might be different from the diff below.
-
-```diff
-   "alias": {
--    "react": "../node_modules/react",
--    "react-dom": "../node_modules/react-dom"
-+    "react": "../../../node_modules/react",
-+    "react-dom": "../../../node_modules/react-dom"
-   },
-```
-
-An alternative to fixing this problem would be to remove aliases altogether and define the dependencies referenced as aliases as dev dependencies instead. [However, that might cause other problems.](https://github.com/palmerhq/tsdx/issues/64)
+> Pokemon Illustrations by [Chris Owens](https://dribbble.com/monkee1895)
