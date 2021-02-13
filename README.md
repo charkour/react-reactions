@@ -290,9 +290,9 @@ npm start
 
 The default example imports and live reloads whatever is in `/dist`, so if you are seeing an out of date component, make sure TSDX is running in watch mode like we recommend above. **No symlinking required**, we use [Parcel's aliasing](https://parceljs.org/module_resolution.html#aliases).
 
-To do a one-off build, use `npm run build` or `yarn build`.
+To do a one-off build, use `npm run build`.
 
-To run tests, use `npm test` or `yarn test`.
+To run tests, use `npm test`.
 
 ## Configuration
 
@@ -300,7 +300,7 @@ Code quality is set up for you with `prettier`, `husky`, and `lint-staged`. Adju
 
 ### Jest
 
-Jest tests are set up to run with `npm test` or `yarn test`.
+Jest tests are set up to run with `npm test`.
 
 ### GitHub Actions
 
