@@ -25,7 +25,7 @@ export const FacebookCounterReaction: React.VFC<FacebookCounterReactionProps> = 
       position: 'relative',
       zIndex: index,
     };
-  }, [icons, reaction, bg, index]);
+  }, [icons, reaction, bg, index, variant]);
 
   return <div style={reactionStyle} />;
 };
