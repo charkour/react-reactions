@@ -24,6 +24,7 @@ npm i @charkour/react-reactions
 - [ ] Add ability to pass **custom icons**
 - [ ] Update current Selectors and Counter to match 2021 styles
 - [ ] Add Discord Selector and Counter
+- [ ] Fix all security vulnerabilities
 - [ ] More??? Suggest a feature on [Github Issues](https://github.com/charkour/react-reactions/issues)
 
 ## Selectors
