@@ -5,9 +5,9 @@ import FacebookCounterReaction from './FacebookCounterReaction';
 export interface FacebookCounterProps {
   counters: CounterObject[];
   user: string;
-  important: string[];
-  onClick: () => void;
-  bg: string;
+  important?: string[];
+  onClick?: () => void;
+  bg?: string;
   variant?: 'facebook' | 'pokemon';
 }
 
@@ -29,8 +29,8 @@ export const FacebookCounter: React.VFC<FacebookCounterProps> = ({
   counters,
   user,
   important,
-  onClick,
-  bg,
+  onClick = () => {},
+  bg = '#fff',
   variant = 'facebook',
 }) => {
   const groups = groupBy(counters, 'emoji');
@@ -42,7 +42,7 @@ export const FacebookCounter: React.VFC<FacebookCounterProps> = ({
   if (names.includes(user)) {
     nameString.push('You');
   }
-  if (important.length) {
+  if (important?.length) {
     if (names.includes(important[0])) {
       nameString.push(important[0]);
     }
