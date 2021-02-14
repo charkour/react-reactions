@@ -1,3 +1,4 @@
+export { default as emoji } from './emoji';
 export * from './groupBy';
 export { default as Hover } from './Hover';
 export * from './HoverStyle';
