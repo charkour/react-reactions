@@ -1,14 +1,15 @@
 import React from 'react';
 import FacebookSelector, {
+  defaultProps,
   FacebookSelectorProps,
 } from '../facebook/FacebookSelector';
 
 export type PokemonSelectorProps = Omit<FacebookSelectorProps, 'variant'>;
 
 export const PokemonSelector: React.VFC<PokemonSelectorProps> = ({
-  reactions,
-  iconSize,
-  onSelect,
+  reactions = defaultProps.reactions,
+  iconSize = defaultProps.iconSize,
+  onSelect = defaultProps.onSelect,
 }) => {
   return (
     <FacebookSelector
@@ -18,11 +19,6 @@ export const PokemonSelector: React.VFC<PokemonSelectorProps> = ({
       onSelect={onSelect}
     />
   );
-};
-
-PokemonSelector.defaultProps = {
-  reactions: ['like', 'love', 'haha', 'wow', 'sad', 'angry'],
-  iconSize: 38,
 };
 
 export default PokemonSelector;

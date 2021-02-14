@@ -1,0 +1,40 @@
+.title {
+  font-size: 15vw;
+  letter-spacing: -1.1vw;
+  font-weight: 800;
+  color: white;
+  white-space: wrap;
+  line-height: 90%;
+}
+
+.emoji {
+  font-size: 10vw;
+  position: sticky;
+  top: 0;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  z-index: 2;
+}
+
+.content {
+  padding: 1rem;
+  position: relative;
+}
+
+.header {
+  padding-top: 11vw;
+  margin-top: -11vw;
+  padding: 1em;
+  padding-bottom: 0;
+  background: rgba(3, 0, 179);
+}
+
+.github {
+  padding: 15px;
+  width: 24px;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  fill: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}

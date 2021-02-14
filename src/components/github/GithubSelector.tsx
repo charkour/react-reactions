@@ -2,13 +2,13 @@ import React from 'react';
 import GithubSelectorEmoji from './GithubSelectorEmoji';
 
 export interface GithubSelectorProps {
-  reactions: string[];
-  onSelect: (shortCode: string) => void;
+  reactions?: string[];
+  onSelect?: (shortCode: string) => void;
 }
 
 export const GithubSelector: React.VFC<GithubSelectorProps> = ({
-  reactions,
-  onSelect,
+  reactions = defaultProps.reactions,
+  onSelect = defaultProps.onSelect,
 }) => {
   return (
     <div style={selectorStyle}>
@@ -29,8 +29,11 @@ export const GithubSelector: React.VFC<GithubSelectorProps> = ({
   );
 };
 
-GithubSelector.defaultProps = {
+const defaultProps: Required<GithubSelectorProps> = {
   reactions: ['👍', '👎', '😄', '🎉', '😕', '❤️'],
+  onSelect: (shortCode: string) => {
+    console.log(shortCode);
+  },
 };
 
 const selectorStyle = {

@@ -3,18 +3,17 @@ import { CounterObject, groupBy, Hover, HoverStyle } from '../../helpers';
 import SlackCounterGroup from './SlackCounterGroup';
 
 export interface SlackCounterProps {
-  hover?: boolean;
-  counters: CounterObject[];
-  user: string;
-  onSelect: (emoji: string) => void;
-  onAdd: () => void;
+  counters?: CounterObject[];
+  user?: string;
+  onSelect?: (emoji: string) => void;
+  onAdd?: () => void;
 }
 
 export const SlackCounter: React.VFC<SlackCounterProps> = ({
-  counters,
-  user,
-  onSelect,
-  onAdd,
+  counters = defaultProps.counters,
+  user = defaultProps.user,
+  onSelect = defaultProps.onSelect,
+  onAdd = defaultProps.onAdd,
 }) => {
   const groups = groupBy(counters, 'emoji');
 
@@ -41,6 +40,26 @@ export const SlackCounter: React.VFC<SlackCounterProps> = ({
       </HoverStyle>
     </Hover>
   );
+};
+
+const defaultProps: Required<SlackCounterProps> = {
+  counters: [
+    {
+      emoji: '👍',
+      by: 'Case Sandberg',
+    },
+    {
+      emoji: '👎',
+      by: 'Charlie',
+    },
+  ],
+  user: 'Charlie',
+  onSelect: (emoji: string) => {
+    console.log(emoji);
+  },
+  onAdd: () => {
+    console.log('add');
+  },
 };
 
 const counterStyle = {

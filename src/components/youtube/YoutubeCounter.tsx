@@ -2,21 +2,21 @@ import React from 'react';
 import YoutubeCounterButton from './YoutubeCounterButton';
 
 export interface YoutubeCounterProps {
-  like: string;
-  dislike: string;
-  onLikeClick: () => void;
-  onDislikeClick: () => void;
-  didLike: boolean;
-  didDislike: boolean;
+  like?: string;
+  dislike?: string;
+  onLikeClick?: () => void;
+  onDislikeClick?: () => void;
+  didLike?: boolean;
+  didDislike?: boolean;
 }
 
 export const YoutubeCounter: React.VFC<YoutubeCounterProps> = ({
-  like,
-  dislike,
-  onLikeClick,
-  onDislikeClick,
-  didLike,
-  didDislike,
+  like = defaultProps.like,
+  dislike = defaultProps.dislike,
+  onLikeClick = defaultProps.onLikeClick,
+  onDislikeClick = defaultProps.onDislikeClick,
+  didLike = defaultProps.didLike,
+  didDislike = defaultProps.didDislike,
 }) => {
   const handleLikeClick = () => onLikeClick();
   const handleDislikeClick = () => onDislikeClick();
@@ -40,6 +40,19 @@ export const YoutubeCounter: React.VFC<YoutubeCounterProps> = ({
       />
     </div>
   );
+};
+
+const defaultProps: Required<YoutubeCounterProps> = {
+  like: '3',
+  dislike: '2',
+  onLikeClick: () => {
+    console.log('like');
+  },
+  onDislikeClick: () => {
+    console.log('dislike');
+  },
+  didLike: false,
+  didDislike: false,
 };
 
 const counterStyle = {
