@@ -9,9 +9,4 @@ export const PokemonCounter: React.VFC<PokemonCounterProps> = props => {
   return <FacebookCounter {...props} variant="pokemon" />;
 };
 
-PokemonCounter.defaultProps = {
-  important: [],
-  bg: '#fff',
-};
-
 export default PokemonCounter;

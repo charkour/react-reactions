@@ -3,17 +3,17 @@ import { CounterObject, groupBy, Hover, HoverStyle } from '../../helpers';
 import GithubCounterGroup from './GithubCounterGroup';
 
 export interface GithubCounterProps {
-  counters: CounterObject[];
-  user: string;
-  onSelect: (emoji: string) => void;
-  onAdd: () => void;
+  counters?: CounterObject[];
+  user?: string;
+  onSelect?: (emoji: string) => void;
+  onAdd?: () => void;
 }
 
 export const GithubCounter: React.VFC<GithubCounterProps> = ({
-  counters,
-  user,
-  onSelect,
-  onAdd,
+  counters = defaultProps.counters,
+  user = defaultProps.user,
+  onSelect = defaultProps.onSelect,
+  onAdd = defaultProps.onAdd,
 }) => {
   const groups = groupBy(counters, 'emoji');
 
@@ -44,6 +44,26 @@ export const GithubCounter: React.VFC<GithubCounterProps> = ({
       </HoverStyle>
     </Hover>
   );
+};
+
+const defaultProps: Required<GithubCounterProps> = {
+  counters: [
+    {
+      emoji: '👍',
+      by: 'Case Sandberg',
+    },
+    {
+      emoji: '👎',
+      by: 'Charlie',
+    },
+  ],
+  user: 'Charlie',
+  onAdd: () => {
+    console.log('add');
+  },
+  onSelect: (emoji: string) => {
+    console.log(emoji);
+  },
 };
 
 const counterStyle = {
