@@ -5,17 +5,17 @@ import SlackSelectorHeader from './SlackSelectorHeader';
 import SlackSelectorItems from './SlackSelectorItems';
 
 export interface SlackSelectorProps {
-  scrollHeight: string;
-  frequent: string[];
-  removeEmojis: string[];
-  onSelect: (id: string) => void;
+  scrollHeight?: string;
+  frequent?: string[];
+  removeEmojis?: string[];
+  onSelect?: (id: string) => void;
 }
 
 export const SlackSelector: React.VFC<SlackSelectorProps> = ({
-  scrollHeight,
-  frequent,
-  removeEmojis,
-  onSelect,
+  scrollHeight = defaultProps.scrollHeight,
+  frequent = defaultProps.frequent,
+  removeEmojis = defaultProps.removeEmojis,
+  onSelect = defaultProps.onSelect,
 }) => {
   return (
     <div style={menuStyle}>
@@ -44,7 +44,7 @@ const menuStyle = {
   border: '1px solid rgba(0,0,0,.15)',
 };
 
-SlackSelector.defaultProps = {
+const defaultProps: Required<SlackSelectorProps> = {
   scrollHeight: '270px',
   removeEmojis: [
     '🙂',
@@ -76,6 +76,9 @@ SlackSelector.defaultProps = {
     '🏇',
     '🇨🇦',
   ],
+  onSelect: (id: string) => {
+    console.log(id);
+  },
 };
 
 export default SlackSelector;
