@@ -1,6 +1,6 @@
 {
   "name": "@charkour/react-reactions",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "😲 Reaction pickers and counters from Slack, Pokemon, GitHub, Facebook & YouTube",
   "keywords": [
     "react",
