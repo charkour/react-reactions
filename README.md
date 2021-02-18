@@ -3,7 +3,7 @@
 - **4 Different Selectors** - Slack, Facebook, Pokemon and GitHub
 - **5 Different Counters** - GitHub, YouTube, Facebook, Pokemon, and Slack
 
-Install [via npm](https://www.npmjs.com/package/@charkour/react-reactions):
+Install [via npm](https://www.npmjs.com/package/@charkour/react-reactions) (or from the [GitHub Package Registry](https://github.com/charkour/react-reactions/packages/623096)):
 
 ```sh
 npm i @charkour/react-reactions
@@ -24,7 +24,6 @@ npm i @charkour/react-reactions
 - [ ] Add ability to pass **custom icons**
 - [ ] Update current Selectors and Counter to match 2021 styles
 - [ ] Add Discord Selector and Counter
-- [ ] Update stories to use `defaultProps` from the components
 - [ ] Add unit testing
 - [ ] More??? Suggest a feature on [Github Issues](https://github.com/charkour/react-reactions/issues)
 
