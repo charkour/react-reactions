@@ -1,6 +1,7 @@
 {
   "name": "@charkour/react-reactions",
   "version": "0.3.3",
+  "private": false,
   "description": "😲 Reaction pickers and counters from Slack, Pokemon, GitHub, Facebook & YouTube",
   "keywords": [
     "react",
@@ -35,17 +36,15 @@
     "analyze": "size-limit --why",
     "build": "tsdx build",
     "build-storybook": "build-storybook",
+    "postinstall": "husky install",
     "lint": "tsdx lint",
     "prepare": "tsdx build",
+    "prepublishOnly": "pinst --disable",
+    "postpublish": "pinst --enable",
     "size": "size-limit",
     "start": "tsdx watch",
     "storybook": "start-storybook -p 6006",
     "test": "tsdx test --passWithNoTests"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint"
-    }
   },
   "prettier": {
     "printWidth": 80,
@@ -65,7 +64,8 @@
     "@types/react-dom": "17.0.1",
     "babel-loader": "8.2.2",
     "eslint-plugin-react-hooks": "2.5.1",
-    "husky": "4.3.8",
+    "husky": "5.0.9",
+    "pinst": "2.1.4",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-is": "17.0.1",
