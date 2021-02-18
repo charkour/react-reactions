@@ -37,7 +37,7 @@
     "build": "tsdx build",
     "build-storybook": "build-storybook",
     "postinstall": "husky install",
-    "lint": "tsdx lint",
+    "lint": "tsdx lint src test",
     "prepare": "tsdx build",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable",
