@@ -1,6 +1,7 @@
 import { Meta, Story } from '@storybook/react';
 import React from 'react';
 import {
+  defaultProps,
   SlackSelector,
   SlackSelectorProps,
 } from '../src/components/slack/SlackSelector';
@@ -28,4 +29,4 @@ const Template: Story<SlackSelectorProps> = args => <SlackSelector {...args} />;
 // https://storybook.js.org/docs/react/workflows/unit-testing
 export const Default = Template.bind({});
 
-Default.args = {};
+Default.args = { ...defaultProps };

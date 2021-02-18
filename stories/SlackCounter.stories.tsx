@@ -1,6 +1,7 @@
 import { Meta, Story } from '@storybook/react';
 import React from 'react';
 import {
+  defaultProps,
   SlackCounter,
   SlackCounterProps,
 } from '../src/components/slack/SlackCounter';
@@ -28,16 +29,4 @@ const Template: Story<SlackCounterProps> = args => <SlackCounter {...args} />;
 // https://storybook.js.org/docs/react/workflows/unit-testing
 export const Default = Template.bind({});
 
-Default.args = {
-  counters: [
-    {
-      emoji: '👍', // String name of reaction
-      by: 'Case Sandberg', // String of persons name
-    },
-    {
-      emoji: '👎', // String name of reaction
-      by: 'Charlie', // String of persons name
-    },
-  ],
-  user: 'Charlie',
-};
+Default.args = { ...defaultProps };

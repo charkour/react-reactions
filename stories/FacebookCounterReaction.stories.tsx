@@ -33,4 +33,5 @@ export const Default = Template.bind({});
 Default.args = {
   reaction: 'angry',
   bg: '#000',
+  variant: 'facebook',
 };

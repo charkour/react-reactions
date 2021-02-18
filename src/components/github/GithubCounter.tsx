@@ -46,7 +46,7 @@ export const GithubCounter: React.VFC<GithubCounterProps> = ({
   );
 };
 
-const defaultProps: Required<GithubCounterProps> = {
+export const defaultProps: Required<GithubCounterProps> = {
   counters: [
     {
       emoji: '👍',

@@ -1,6 +1,7 @@
 import { Meta, Story } from '@storybook/react';
 import React from 'react';
 import {
+  defaultProps,
   FacebookCounter,
   FacebookCounterProps,
 } from '../src/components/facebook/FacebookCounter';
@@ -30,16 +31,4 @@ const Template: Story<FacebookCounterProps> = args => (
 // https://storybook.js.org/docs/react/workflows/unit-testing
 export const Default = Template.bind({});
 
-Default.args = {
-  counters: [
-    {
-      emoji: 'like', // String name of reaction
-      by: 'Case Sandberg', // String of persons name
-    },
-    {
-      emoji: 'haha', // String name of reaction
-      by: 'Charlie', // String of persons name
-    },
-  ],
-  user: 'Charlie',
-};
+Default.args = { ...defaultProps };

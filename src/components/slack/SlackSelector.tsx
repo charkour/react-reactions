@@ -44,7 +44,7 @@ const menuStyle = {
   border: '1px solid rgba(0,0,0,.15)',
 };
 
-const defaultProps: Required<SlackSelectorProps> = {
+export const defaultProps: Required<SlackSelectorProps> = {
   scrollHeight: '270px',
   removeEmojis: [
     '🙂',

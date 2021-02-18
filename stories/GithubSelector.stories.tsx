@@ -1,6 +1,7 @@
 import { Meta, Story } from '@storybook/react';
 import React from 'react';
 import {
+  defaultProps,
   GithubSelector,
   GithubSelectorProps,
 } from '../src/components/github/GithubSelector';
@@ -30,4 +31,4 @@ const Template: Story<GithubSelectorProps> = args => (
 // https://storybook.js.org/docs/react/workflows/unit-testing
 export const Default = Template.bind({});
 
-Default.args = {};
+Default.args = { ...defaultProps };

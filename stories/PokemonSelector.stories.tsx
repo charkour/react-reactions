@@ -1,5 +1,6 @@
 import { Meta, Story } from '@storybook/react';
 import React from 'react';
+import { defaultProps } from '../src/components/facebook/FacebookSelector';
 import {
   PokemonSelector,
   PokemonSelectorProps,
@@ -30,4 +31,5 @@ const Template: Story<PokemonSelectorProps> = args => (
 // https://storybook.js.org/docs/react/workflows/unit-testing
 export const Default = Template.bind({});
 
-Default.args = {};
+const { variant, ...props } = defaultProps;
+Default.args = { ...props };

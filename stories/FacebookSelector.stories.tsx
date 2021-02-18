@@ -1,6 +1,7 @@
 import { Meta, Story } from '@storybook/react';
 import React from 'react';
 import {
+  defaultProps,
   FacebookSelector,
   FacebookSelectorProps,
 } from '../src/components/facebook/FacebookSelector';
@@ -30,4 +31,4 @@ const Template: Story<FacebookSelectorProps> = args => (
 // https://storybook.js.org/docs/react/workflows/unit-testing
 export const Default = Template.bind({});
 
-Default.args = {};
+Default.args = { ...defaultProps };

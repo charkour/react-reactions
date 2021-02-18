@@ -42,7 +42,7 @@ export const SlackCounter: React.VFC<SlackCounterProps> = ({
   );
 };
 
-const defaultProps: Required<SlackCounterProps> = {
+export const defaultProps: Required<SlackCounterProps> = {
   counters: [
     {
       emoji: '👍',

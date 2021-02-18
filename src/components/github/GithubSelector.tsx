@@ -29,7 +29,7 @@ export const GithubSelector: React.VFC<GithubSelectorProps> = ({
   );
 };
 
-const defaultProps: Required<GithubSelectorProps> = {
+export const defaultProps: Required<GithubSelectorProps> = {
   reactions: ['👍', '👎', '😄', '🎉', '😕', '❤️'],
   onSelect: (shortCode: string) => {
     console.log(shortCode);
