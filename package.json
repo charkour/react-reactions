@@ -36,6 +36,7 @@
     "analyze": "size-limit --why",
     "build": "tsdx build",
     "build-storybook": "build-storybook",
+    "fix": "tsdx lint --fix src test",
     "postinstall": "husky install",
     "lint": "tsdx lint src test",
     "prepare": "tsdx build",
