@@ -20,8 +20,6 @@ export const SlackCounterGroup: React.VFC<SlackCounterGroupProps> = ({
     onSelect && onSelect(emoji);
   };
 
-  console.log(active);
-
   return (
     <Hover
       hoverStyle={groupStyleActive}
