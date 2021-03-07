@@ -61,6 +61,7 @@ const labelStyle: React.CSSProperties = {
   transform: 'translateX(-50%)',
   transition: '200ms transform cubic-bezier(0.23, 1, 0.32, 1)',
   opacity: '0',
+  zIndex : '1000'
 };
 const iconStyleHover = { transform: 'scale(1.3)' };
 
