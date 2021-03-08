@@ -9,6 +9,7 @@ export interface FacebookCounterProps {
   onClick?: () => void;
   bg?: string;
   variant?: 'facebook' | 'pokemon';
+  alwaysShowOthers: boolean;
 }
 
 export const FacebookCounter: React.VFC<FacebookCounterProps> = ({
@@ -18,6 +19,7 @@ export const FacebookCounter: React.VFC<FacebookCounterProps> = ({
   onClick = defaultProps.onClick,
   bg = defaultProps.bg,
   variant = defaultProps.variant,
+  alwaysShowOthers = defaultProps.alwaysShowOthers,
 }) => {
   const groups = groupBy(counters, 'emoji');
   const names = counters.map(({ by }: CounterObject) => {
@@ -36,7 +38,10 @@ export const FacebookCounter: React.VFC<FacebookCounterProps> = ({
       nameString.push(important[1]);
     }
   }
-  nameString.push(`${names.length - nameString.length} others`);
+  const othersCount = names.length - nameString.length;
+  if (alwaysShowOthers || othersCount > 0) {
+    nameString.push(`${othersCount} other${othersCount === 1 ? '' : 's'}`);
+  }
 
   return (
     <div style={counterStyle} onClick={onClick}>
@@ -66,6 +71,10 @@ export const defaultProps: Required<FacebookCounterProps> = {
       by: 'Case Sandberg',
     },
     {
+      emoji: 'like',
+      by: 'Jon',
+    },
+    {
       emoji: 'haha',
       by: 'Charlie',
     },
@@ -74,6 +83,7 @@ export const defaultProps: Required<FacebookCounterProps> = {
   onClick: () => {
     console.log('click');
   },
+  alwaysShowOthers: false,
 };
 
 const counterStyle = {

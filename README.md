@@ -192,6 +192,16 @@ const Component = () => {
 }
 ```
 
+`user`: String name of user so that user displays as `You`
+
+`important`: Array of strings for important users to display their name
+
+`bg`: String of hex color for outline of overlapping reactions. Defaults to `#fff`
+
+`onClick`: Function callback when clicked
+
+`alwaysShowOthers`: boolean. Will display "and 0 others" if you are the only person who reacted.
+
 ---
 
 ### Pokemon Counter
@@ -223,6 +233,8 @@ const Component = () => {
 `bg`: String of hex color for outline of overlapping reactions. Defaults to `#fff`
 
 `onClick`: Function callback when clicked
+
+`alwaysShowOthers`: boolean. Will display "and 0 others" if you are the only person who reacted.
 
 ---
 
