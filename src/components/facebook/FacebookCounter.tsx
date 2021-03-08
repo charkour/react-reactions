@@ -9,7 +9,7 @@ export interface FacebookCounterProps {
   onClick?: () => void;
   bg?: string;
   variant?: 'facebook' | 'pokemon';
-  alwaysShowOthers: boolean;
+  alwaysShowOthers?: boolean;
 }
 
 export const FacebookCounter: React.VFC<FacebookCounterProps> = ({
