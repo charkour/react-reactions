@@ -3,6 +3,8 @@
 - **4 Different Selectors** - Slack, Facebook, Pokemon and GitHub
 - **5 Different Counters** - GitHub, YouTube, Facebook, Pokemon, and Slack
 
+[![Downloads](https://img.shields.io/npm/dt/@charkour/react-reactions.svg)](https://www.npmjs.com/package/@charkour/react-reactions)
+
 Install [via npm](https://www.npmjs.com/package/@charkour/react-reactions) (or from the [GitHub Package Registry](https://github.com/charkour/react-reactions/packages/623096)):
 
 ```sh
