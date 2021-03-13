@@ -3,6 +3,8 @@
 - **4 Different Selectors** - Slack, Facebook, Pokemon and GitHub
 - **5 Different Counters** - GitHub, YouTube, Facebook, Pokemon, and Slack
 
+[![Downloads](https://img.shields.io/npm/dt/@charkour/react-reactions.svg)](https://www.npmjs.com/package/@charkour/react-reactions)
+
 Install [via npm](https://www.npmjs.com/package/@charkour/react-reactions) (or from the [GitHub Package Registry](https://github.com/charkour/react-reactions/packages/623096)):
 
 ```sh
@@ -192,6 +194,16 @@ const Component = () => {
 }
 ```
 
+`user`: String name of user so that user displays as `You`
+
+`important`: Array of strings for important users to display their name
+
+`bg`: String of hex color for outline of overlapping reactions. Defaults to `#fff`
+
+`onClick`: Function callback when clicked
+
+`alwaysShowOthers`: boolean. Will display "and 0 others" if you are the only person who reacted.
+
 ---
 
 ### Pokemon Counter
@@ -224,6 +236,8 @@ const Component = () => {
 
 `onClick`: Function callback when clicked
 
+`alwaysShowOthers`: boolean. Will display "and 0 others" if you are the only person who reacted.
+
 ---
 
 ### Slack Counter
@@ -255,6 +269,10 @@ const Component = () => {
 `onAdd`: Function callback when add reaction is clicked
 
 ---
+
+## Animation
+
+A simple animation can be done on the components using CSS. See this [demo](https://codesandbox.io/s/sweet-burnell-oh5vg?file=/src/App.js).
 
 ## Development
 
