@@ -50,6 +50,12 @@ const Component = () => {
 `reactions?: Reaction[];` — Array of Reaction objects `{label: "haha", node: <div>😄</div>}` to display.
 `onSelect: (label: string) => void;` — Function callback when emoji is selected
 
+![image](https://user-images.githubusercontent.com/33156025/111041592-e1ece100-8406-11eb-82f5-226b3839683c.png)
+
+Also works with images.
+
+![image](https://user-images.githubusercontent.com/33156025/111041788-00071100-8408-11eb-82a3-e23723e0755c.png)
+
 _Note_: When passing an `<img>` as a Reaction. Specify the `iconSize` as the height of the image. `<img height={iconSize} src="img-source" />`
 
 ## Selectors
