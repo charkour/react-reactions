@@ -2,14 +2,14 @@ import { Meta, Story } from '@storybook/react';
 import React from 'react';
 import {
   defaultProps,
-  FacebookSelector,
-  FacebookSelectorProps,
-} from '../src/components/facebook/FacebookSelector';
+  ReactionBarSelector,
+  ReactionBarSelectorProps,
+} from '../src/components/custom/ReactionBarSelector';
 import './helper.css';
 
 const meta: Meta = {
-  title: 'FacebookSelector',
-  component: FacebookSelector,
+  title: 'ReactionBarSelector',
+  component: ReactionBarSelector,
   argTypes: {
     children: {
       control: {
@@ -24,9 +24,9 @@ const meta: Meta = {
 
 export default meta;
 
-const Template: Story<FacebookSelectorProps> = args => (
+const Template: Story<ReactionBarSelectorProps> = args => (
   <div className="center">
-    <FacebookSelector {...args} />
+    <ReactionBarSelector {...args} />
   </div>
 );
 
