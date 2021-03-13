@@ -268,6 +268,10 @@ const Component = () => {
 
 ---
 
+## Animation
+
+A simple animation can be done on the components using CSS. See this [demo](https://codesandbox.io/s/sweet-burnell-oh5vg?file=/src/App.js).
+
 ## Development
 
 ```bash
