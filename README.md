@@ -1,5 +1,7 @@
 # ![react-reactions](./assets/react-reactions-media.png)
 
+Create your own reaction bar or use one of your favorites!
+
 - **4 Different Selectors** - Slack, Facebook, Pokemon and GitHub
 - **5 Different Counters** - GitHub, YouTube, Facebook, Pokemon, and Slack
 
@@ -15,6 +17,7 @@ npm i @charkour/react-reactions
 
 ## New Features
 
+- [x] Add ability to pass **custom icons**
 - [x] Fixed security vulnerabilities
 - [x] CJS and ESM support
 - [x] Zero dependencies
@@ -23,11 +26,31 @@ npm i @charkour/react-reactions
 
 ## Road Map
 
-- [ ] Add ability to pass **custom icons**
 - [ ] Update current Selectors and Counter to match 2021 styles
 - [ ] Add Discord Selector and Counter
 - [ ] Add unit testing
 - [ ] More??? Suggest a feature on [Github Issues](https://github.com/charkour/react-reactions/issues)
+
+## Custom Selectors
+
+### Reaction Bar Selector
+
+```tsx
+import React from 'react';
+import { ReactionBarSelector } from '@charkour/react-reactions';
+
+const Component = () => {
+  return <ReactionBarSelector />;
+};
+```
+
+**Props:**
+
+`iconSize?: number` — String icon pixel size. Defaults to `38px`
+`reactions?: Reaction[];` — Array of Reaction objects `{label: "haha", node: <div>😄</div>}` to display.
+`onSelect: (label: string) => void;` — Function callback when emoji is selected
+
+_Note_: When passing an `<img>` as a Reaction. Specify the `iconSize` as the height of the image. `<img height={iconSize} src="img-source" />`
 
 ## Selectors
 

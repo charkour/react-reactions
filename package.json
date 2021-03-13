@@ -2,10 +2,11 @@
   "name": "@charkour/react-reactions",
   "version": "0.4.0",
   "private": false,
-  "description": "😲 Reaction pickers and counters from Slack, Pokemon, GitHub, Facebook & YouTube",
+  "description": "😲 Create custom reaction pickers and counters",
   "keywords": [
     "react",
     "reactions",
+    "custom",
     "reaction picker",
     "react-component",
     "reaction-picker",
