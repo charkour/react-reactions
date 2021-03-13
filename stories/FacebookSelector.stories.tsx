@@ -5,6 +5,7 @@ import {
   FacebookSelector,
   FacebookSelectorProps,
 } from '../src/components/facebook/FacebookSelector';
+import './helper.css';
 
 const meta: Meta = {
   title: 'FacebookSelector',
@@ -24,7 +25,9 @@ const meta: Meta = {
 export default meta;
 
 const Template: Story<FacebookSelectorProps> = args => (
-  <FacebookSelector {...args} />
+  <div className="center">
+    <FacebookSelector {...args} />
+  </div>
 );
 
 // By passing using the Args format for exported stories, you can control the props for a component for reuse in a test

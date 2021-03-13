@@ -6,5 +6,6 @@ export { default as icons } from './icons';
 export * from './interfaces';
 export * from './slack';
 export * from './strings';
+export * from './types';
 export * from './useHover';
 export { default as withActive } from './withActive';

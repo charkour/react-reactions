@@ -1,0 +1,10 @@
+/* center components */
+.center {
+  width: 100%;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2em;
+}
