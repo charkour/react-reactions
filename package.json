@@ -2,7 +2,7 @@
   "name": "@charkour/react-reactions",
   "version": "0.4.0",
   "private": false,
-  "description": "😲 Create custom reaction pickers and counters",
+  "description": "😲 Create custom reaction pickers and counters or use your favorites!",
   "keywords": [
     "react",
     "reactions",
@@ -14,7 +14,9 @@
     "pokemon",
     "github",
     "facebook",
-    "youtube"
+    "youtube",
+    "selector",
+    "counter"
   ],
   "homepage": "https://github.com/charkour/react-reactions",
   "bugs": {
