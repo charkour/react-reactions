@@ -87,7 +87,8 @@ export const defaultProps: Required<FacebookCounterProps> = {
 };
 
 const counterStyle = {
-  display: 'flex',
+display: 'inline-box',
+  display: '-webkit-inline-box',
   cursor: 'pointer',
   color: '#365899',
   fontFamily: `"San Francisco", -apple-system, BlinkMacSystemFont,
