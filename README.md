@@ -299,9 +299,10 @@ const Component = () => {
 
 ---
 
-## Animation
+## Animations
 
 A simple animation can be done on the components using CSS. See this [demo](https://codesandbox.io/s/sweet-burnell-oh5vg?file=/src/App.js).
+More advaned animations can be done using dynamic styles. See this [demo](https://codesandbox.io/s/competent-curran-cn4tv?file=/src/App.js)
 
 ## Development
 
