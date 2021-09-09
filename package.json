@@ -63,7 +63,7 @@
     "@storybook/addon-links": "6.2.9",
     "@storybook/addons": "6.2.9",
     "@storybook/react": "6.2.9",
-    "@types/react": "17.0.5",
+    "@types/react": "17.0.20",
     "@types/react-dom": "17.0.5",
     "babel-loader": "8.2.2",
     "eslint-plugin-react-hooks": "2.5.1",
