@@ -6,6 +6,7 @@ export interface ReactionCounterProps extends Partial<Pick<ReactionCounterEmojiP
   reactions: ReactionCounterObject[];
   user?: string;
   important?: string[];
+  showReactsOnly?: boolean;
   showTotalOnly?: boolean;
   showOthersAlways?: boolean;
   className?: string;
@@ -20,6 +21,7 @@ export const ReactionCounter: React.VFC<ReactionCounterProps> = ({
   onClick,
   iconSize = 24,
   bg = '#FFF',
+  showReactsOnly = false,
   showTotalOnly = false,
   showOthersAlways = true,
 }) => {
@@ -63,9 +65,14 @@ export const ReactionCounter: React.VFC<ReactionCounterProps> = ({
           node={groups[reaction][0].node}
         />
       ))}
-      <div style={nameStyle}>
-        {showTotalOnly ? names.length : listOfNames(nameString)}
-      </div>
+      {!showReactsOnly
+        ? (
+          <div style={nameStyle}>
+            {showTotalOnly ? names.length : listOfNames(nameString)}
+          </div>
+        )
+        : null
+      }
     </div>
   );
 };
