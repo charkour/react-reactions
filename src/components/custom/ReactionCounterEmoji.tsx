@@ -9,16 +9,19 @@ export interface ReactionCounterEmojiProps {
 
 export const ReactionCounterEmoji: React.VFC<ReactionCounterEmojiProps> = ({
   node,
+  bg,
   iconSize,
   index
 }) => {
   const emojiContainerStyle: React.CSSProperties = React.useMemo(() => {
     return {
-      boxShadow: '0 0 0 2px #FFF',
-      position: 'relative',
       zIndex: index,
+      position: 'relative',
+      boxShadow: `0 0 0 2px ${bg}`,
+      width: `${iconSize}px`,
+      height: `${iconSize}px`,
     };
-  }, [index]);
+  }, [index, bg]);
 
   const emojiStyle: React.CSSProperties = React.useMemo(() => {
     return {
