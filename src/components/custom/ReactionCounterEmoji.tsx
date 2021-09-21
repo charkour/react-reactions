@@ -2,7 +2,7 @@ import React from 'react';
 
 export interface ReactionCounterEmojiProps {
   node: JSX.Element;
-  bg: string,
+  bg: string;
   iconSize: number;
   index: number;
 }
@@ -11,7 +11,7 @@ export const ReactionCounterEmoji: React.VFC<ReactionCounterEmojiProps> = ({
   node,
   bg,
   iconSize,
-  index
+  index,
 }) => {
   const emojiContainerStyle: React.CSSProperties = React.useMemo(() => {
     return {
@@ -21,7 +21,7 @@ export const ReactionCounterEmoji: React.VFC<ReactionCounterEmojiProps> = ({
       width: `${iconSize}px`,
       height: `${iconSize}px`,
     };
-  }, [index, bg]);
+  }, [iconSize, index, bg]);
 
   const emojiStyle: React.CSSProperties = React.useMemo(() => {
     return {
@@ -30,13 +30,13 @@ export const ReactionCounterEmoji: React.VFC<ReactionCounterEmojiProps> = ({
       objectFit: 'contain',
       objectPosition: 'center center',
     };
-  }, [iconSize, index]);
+  }, [iconSize]);
 
   return (
     <div style={emojiContainerStyle}>
       {React.cloneElement(node, { style: emojiStyle })}
     </div>
   );
-}
+};
 
 export default ReactionCounterEmoji;
