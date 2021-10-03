@@ -1,8 +1,12 @@
 import React from 'react';
 import { groupBy, listOfNames, ReactionCounterObject } from '../../helpers';
-import { ReactionCounterEmoji, ReactionCounterEmojiProps } from './ReactionCounterEmoji';
+import {
+  ReactionCounterEmoji,
+  ReactionCounterEmojiProps,
+} from './ReactionCounterEmoji';
 
-export interface ReactionCounterProps extends Partial<Pick<ReactionCounterEmojiProps, 'iconSize' | 'bg'>> {
+export interface ReactionCounterProps
+  extends Partial<Pick<ReactionCounterEmojiProps, 'iconSize' | 'bg'>> {
   reactions: ReactionCounterObject[];
   user?: string;
   important?: string[];
@@ -65,14 +69,11 @@ export const ReactionCounter: React.VFC<ReactionCounterProps> = ({
           node={groups[reaction][0].node}
         />
       ))}
-      {!showReactsOnly
-        ? (
-          <div style={nameStyle}>
-            {showTotalOnly ? names.length : listOfNames(nameString)}
-          </div>
-        )
-        : null
-      }
+      {!showReactsOnly ? (
+        <div style={nameStyle}>
+          {showTotalOnly ? names.length : listOfNames(nameString)}
+        </div>
+      ) : null}
     </div>
   );
 };

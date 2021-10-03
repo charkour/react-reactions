@@ -86,11 +86,11 @@
   "size-limit": [
     {
       "path": "dist/react-reactions.cjs.production.min.js",
-      "limit": "55 KB"
+      "limit": "56 KB"
     },
     {
       "path": "dist/react-reactions.esm.js",
-      "limit": "55 KB"
+      "limit": "56 KB"
     }
   ]
 }
