@@ -71,6 +71,30 @@ const Component = () => {
 };
 ```
 
+**Props:***
+
+`iconSize?: number` - String icon pixel size. Defaults to `24px`
+
+`bg?: string` - String of hex color for outline of overlapping reactions. Defaults to `#fff`
+
+`reactions: ReactionCounterObject[]` - Array of emoji to dispay
+
+`user?: string` - String name of user so that user displays as `You`
+
+`important?: string[]` - Array of strings for important users to display their name
+
+`showReactsOnly?: boolean` - If `true`, only show the Reactions and no text. Defaults to `false`
+
+`showTotalOnly?: boolean` - If `true`, only show the number of Reactions and no specific names. Defaults to `false`
+
+`showOthersAlways?: boolean` - Will display "and 0 others" if you are the only person who reacted. Defaults to `true`
+
+`className?: string` - Pass a string that applies to the counter container
+
+`onClick?: () => void` - Pass a callback that is added to the `onClick` property to the counter container
+
+![image](https://user-images.githubusercontent.com/33156025/135777827-803fac2d-d2c9-4734-8073-bd6e3a6d2160.png)
+
 ## Selectors
 
 ### Slack Selector
