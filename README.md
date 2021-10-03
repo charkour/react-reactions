@@ -352,10 +352,7 @@ Jest tests are set up to run with `npm test`.
 
 ### GitHub Actions
 
-Two actions are added by default:
-
 - `main` which installs deps w/ cache, lints, tests, and builds on all pushes against a Node and OS matrix
-- `size` which comments cost comparison of your library on every pull request using [size-limit](https://github.com/ai/size-limit)
 
 ---
 
