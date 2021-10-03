@@ -25,7 +25,7 @@ export const ReactionBarSelector: React.VFC<ReactionBarSelectorProps> = ({
 
   return (
     <div style={wrapStyle}>
-      {reactions.map(reaction => {
+      {reactions.map((reaction: Reaction) => {
         return (
           <div style={emojiStyle} key={reaction.label}>
             <ReactionBarSelectorEmoji reaction={reaction} onSelect={onSelect} />

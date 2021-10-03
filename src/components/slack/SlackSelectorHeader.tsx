@@ -22,7 +22,7 @@ export const SlackSelectorHeader: React.VFC<SlackSelectorHeaderProps> = ({
 
   return (
     <div style={headerStyle}>
-      {tabs.map(tab => {
+      {tabs.map((tab: Tab) => {
         return (
           <SlackSelectorHeaderTab
             icon={tab.icon}

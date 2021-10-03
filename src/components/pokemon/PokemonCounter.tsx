@@ -5,7 +5,9 @@ import FacebookCounter, {
 
 export type PokemonCounterProps = Omit<FacebookCounterProps, 'variant'>;
 
-export const PokemonCounter: React.VFC<PokemonCounterProps> = props => {
+export const PokemonCounter: React.VFC<PokemonCounterProps> = (
+  props: PokemonCounterProps
+) => {
   return <FacebookCounter {...props} variant="pokemon" />;
 };
 

@@ -19,7 +19,7 @@ export const SlackCounter: React.VFC<SlackCounterProps> = ({
 
   return (
     <Hover style={counterStyle}>
-      {Object.keys(groups).map(emoji => {
+      {Object.keys(groups).map((emoji: string) => {
         const names = groups[emoji].map(({ by }: CounterObject) => {
           return by;
         });

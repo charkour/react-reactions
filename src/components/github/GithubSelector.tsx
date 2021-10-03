@@ -15,7 +15,7 @@ export const GithubSelector: React.VFC<GithubSelectorProps> = ({
       <p style={labelStyle}>Pick your reaction</p>
       <div style={dividerStyle} />
       <div style={emojiStyle}>
-        {reactions.map(reaction => {
+        {reactions.map((reaction: string) => {
           return (
             <GithubSelectorEmoji
               key={reaction}

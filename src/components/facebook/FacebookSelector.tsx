@@ -22,7 +22,7 @@ export const FacebookSelector: React.VFC<FacebookSelectorProps> = ({
 
   return (
     <div style={wrapStyle}>
-      {reactions.map(reaction => {
+      {reactions.map((reaction: string) => {
         return (
           <div style={emojiStyle} key={reaction}>
             <FacebookSelectorEmoji
