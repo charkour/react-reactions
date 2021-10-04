@@ -12,7 +12,14 @@
       "source.organizeImports": true,
       "source.fixAll": true
     },
-    "eslint.workingDirectories": [{ "mode": "auto" }]
+    "eslint.workingDirectories": [
+      {
+        "mode": "auto"
+      }
+    ],
+    "[ignore]": {
+      "editor.defaultFormatter": "stylelint.vscode-stylelint"
+    }
   },
   "extensions": {
     "recommendations": [

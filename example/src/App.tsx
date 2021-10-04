@@ -16,7 +16,7 @@ interface AppProps {}
 
 const App = ({}: AppProps) => {
   return (
-    <div className="App">
+    <div className="">
       <div className="title emoji">😲</div>
       <div className="header">
         <span className="title">React Reactions</span>
@@ -40,7 +40,7 @@ const App = ({}: AppProps) => {
             frameBorder="0"
           ></iframe>
         </div>
-        <div>selectors</div>
+        <div className="text-blue-500">selectors</div>
         <SlackSelector />
         <GithubSelector />
         <FacebookSelector />
