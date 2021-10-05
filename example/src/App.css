@@ -7,34 +7,20 @@
   line-height: 90%;
 }
 
-.emoji {
-  font-size: 10vw;
-  position: sticky;
-  top: 0;
-  padding-top: 1rem;
-  padding-left: 1rem;
-  z-index: 2;
-}
-
-.content {
-  padding: 1rem;
-  position: relative;
-}
-
-.header {
-  padding-top: 11vw;
-  margin-top: -11vw;
-  padding: 1em;
-  padding-bottom: 0;
+.header-background-blue {
   background: rgba(3, 0, 179);
 }
 
+html {
+  @apply header-background-blue;
+}
+
 .github {
-  padding: 15px;
+  /* padding: 15px;
   width: 24px;
   position: fixed;
   top: 0px;
   right: 0px;
   fill: rgba(0, 0, 0, 0.3);
-  cursor: pointer;
+  cursor: pointer; */
 }
