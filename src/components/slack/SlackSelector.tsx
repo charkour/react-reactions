@@ -1,5 +1,5 @@
 import React from 'react';
-import './Slack.css';
+import SlackCSS from './SlackCSS';
 import SlackSelectorFooter from './SlackSelectorFooter';
 import SlackSelectorHeader from './SlackSelectorHeader';
 import SlackSelectorItems from './SlackSelectorItems';
@@ -19,6 +19,7 @@ export const SlackSelector: React.VFC<SlackSelectorProps> = ({
 }) => {
   return (
     <div style={menuStyle}>
+      <SlackCSS />
       <SlackSelectorHeader />
       <SlackSelectorItems
         scrollHeight={scrollHeight}

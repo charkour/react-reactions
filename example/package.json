@@ -1,34 +1,25 @@
 {
+  "name": "react-reactions-example",
+  "private": true,
+  "version": "0.0.0",
   "scripts": {
-    "build": "snowpack build",
-    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
-    "lint": "prettier --check \"src/**/*.{js,jsx,ts,tsx}\"",
-    "start": "snowpack dev",
-    "test": "web-test-runner \"src/**/*.test.tsx\""
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
+    "@charkour/react-reactions": "^0.6.2",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-markdown": "7.0.1"
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@snowpack/plugin-dotenv": "^2.1.0",
-    "@snowpack/plugin-postcss": "^1.4.3",
-    "@snowpack/plugin-react-refresh": "^2.5.0",
-    "@snowpack/plugin-typescript": "^1.2.1",
-    "@snowpack/web-test-runner-plugin": "^0.2.2",
-    "@testing-library/react": "^12.1.2",
-    "@types/chai": "^4.2.18",
-    "@types/react": "^17.0.5",
-    "@types/react-dom": "^17.0.5",
-    "@types/snowpack-env": "^2.3.3",
-    "@web/test-runner": "^0.13.4",
-    "autoprefixer": "^10.3.6",
-    "chai": "^4.3.4",
-    "postcss": "^8.3.8",
-    "prettier": "^2.3.0",
-    "snowpack": "^3.5.0",
-    "tailwindcss": "^2.2.16",
-    "typescript": "^4.2.4"
+    "@types/react": "^17.0.33",
+    "@types/react-dom": "^17.0.10",
+    "@vitejs/plugin-react": "^1.0.7",
+    "autoprefixer": "^10.4.2",
+    "postcss": "^8.4.8",
+    "tailwindcss": "^3.0.23",
+    "typescript": "^4.5.4",
+    "vite": "^2.8.0"
   }
 }

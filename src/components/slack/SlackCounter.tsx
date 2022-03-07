@@ -1,7 +1,7 @@
 import React from 'react';
 import { CounterObject, groupBy, Hover, HoverStyle } from '../../helpers';
-import './Slack.css';
 import SlackCounterGroup from './SlackCounterGroup';
+import SlackCSS from './SlackCSS';
 
 export interface SlackCounterProps {
   counters?: CounterObject[];
@@ -19,27 +19,30 @@ export const SlackCounter: React.VFC<SlackCounterProps> = ({
   const groups = groupBy(counters, 'emoji');
 
   return (
-    <Hover style={counterStyle}>
-      {Object.keys(groups).map((emoji: string) => {
-        const names = groups[emoji].map(({ by }: CounterObject) => {
-          return by;
-        });
-        return (
-          <div style={groupStyle} key={emoji}>
-            <SlackCounterGroup
-              emoji={emoji}
-              count={names.length}
-              names={names}
-              active={names.includes(user)}
-              onSelect={onSelect}
-            />
-          </div>
-        );
-      })}
-      <HoverStyle hoverStyle={addStyleHover} style={addStyle} onClick={onAdd}>
-        <SlackCounterGroup emoji={''} />
-      </HoverStyle>
-    </Hover>
+    <>
+      <SlackCSS />
+      <Hover style={counterStyle}>
+        {Object.keys(groups).map((emoji: string) => {
+          const names = groups[emoji].map(({ by }: CounterObject) => {
+            return by;
+          });
+          return (
+            <div style={groupStyle} key={emoji}>
+              <SlackCounterGroup
+                emoji={emoji}
+                count={names.length}
+                names={names}
+                active={names.includes(user)}
+                onSelect={onSelect}
+              />
+            </div>
+          );
+        })}
+        <HoverStyle hoverStyle={addStyleHover} style={addStyle} onClick={onAdd}>
+          <SlackCounterGroup emoji={''} />
+        </HoverStyle>
+      </Hover>
+    </>
   );
 };
 
@@ -51,7 +54,7 @@ export const defaultProps: Required<SlackCounterProps> = {
     },
     {
       emoji: '👎',
-      by: 'Charlie',
+      by: 'Charlie!!!!!',
     },
   ],
   user: 'Charlie',
