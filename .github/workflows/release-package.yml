@@ -13,6 +13,7 @@ jobs:
         with:
           node-version: 16
           cache: 'pnpm'
+      - uses: pnpm/action-setup@v2.1.0
       - run: pnpm ci
       - run: pnpm test
 
@@ -26,6 +27,7 @@ jobs:
           node-version: 16
           registry-url: https://npm.pkg.github.com/
           cache: 'pnpm'
+      - uses: pnpm/action-setup@v2.1.0
       - run: pnpm ci
       - run: pnpm publish
         env:
