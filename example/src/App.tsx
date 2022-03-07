@@ -10,13 +10,12 @@ import {
   YoutubeCounter,
 } from '@charkour/react-reactions';
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
 import './App.css';
 
 async function getFileFromUrl(
   url: string,
   name: string,
-  defaultType = 'image/jpeg',
+  defaultType = 'image/jpeg'
 ) {
   const response = await fetch(url);
   const data = await response.blob();
@@ -34,7 +33,7 @@ const App: React.FC = () => {
     (async () => {
       const file = await getFileFromUrl(
         'https://raw.githubusercontent.com/charkour/react-reactions/main/README.md',
-        'readme.md',
+        'readme.md'
       );
       read.readAsBinaryString(file);
       read.onloadend = function () {
@@ -84,8 +83,6 @@ const App: React.FC = () => {
         <FacebookCounter />
         <PokemonCounter />
         <SlackCounter />
-        <div style={{ height: '900px' }}>docs</div>
-        <ReactMarkdown children={markdown as string} />
       </div>
     </>
   );
