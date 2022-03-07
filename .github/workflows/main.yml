@@ -19,7 +19,8 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
           cache: 'pnpm'
-        run: pnpm i
+
+      - run: pnpm i
 
       - name: Lint
         run: yarn lint
