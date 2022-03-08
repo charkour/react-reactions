@@ -41,8 +41,10 @@ export const SlackSelectorItems: React.VFC<SlackSelectorItemsProps> = ({
             <SlackSelectorSection
               key={slug}
               slug={slug}
-              emojis={group.filter((e: string) => {
-                return group.indexOf(e) < 0;
+              emojis={group.filter(function(this: any, e: string) {
+                // https://stackoverflow.com/a/41945742/9931154
+                // https://stackoverflow.com/a/34902391/9931154
+                return this.indexOf(e) < 0;
               }, removeEmojis)}
               onSelect={onSelect}
             />
