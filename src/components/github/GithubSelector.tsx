@@ -1,5 +1,5 @@
 import React from 'react';
-import GithubSelectorEmoji from './GithubSelectorEmoji';
+import GithubSelectorEmoji from './components/GithubSelectorEmoji';
 
 export interface GithubSelectorProps {
   reactions?: string[];

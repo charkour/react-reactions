@@ -3,7 +3,7 @@ import { groupBy, listOfNames, ReactionCounterObject } from '../../helpers';
 import {
   ReactionCounterEmoji,
   ReactionCounterEmojiProps,
-} from './ReactionCounterEmoji';
+} from './components/ReactionCounterEmoji';
 
 export interface ReactionCounterProps
   extends Partial<Pick<ReactionCounterEmojiProps, 'iconSize' | 'bg'>> {

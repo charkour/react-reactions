@@ -1,6 +1,6 @@
 import React from 'react';
 import { CounterObject, groupBy, Hover, HoverStyle } from '../../helpers';
-import GithubCounterGroup from './GithubCounterGroup';
+import GithubCounterGroup from './components/GithubCounterGroup';
 
 export interface GithubCounterProps {
   counters?: CounterObject[];

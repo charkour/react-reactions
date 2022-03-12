@@ -71,7 +71,7 @@ const Component = () => {
 };
 ```
 
-**Props:***
+**Props:\***
 
 `iconSize?: number` - String icon pixel size. Defaults to `24px`
 
@@ -98,6 +98,8 @@ const Component = () => {
 ## Selectors
 
 ### Slack Selector
+
+Note: You will need to include the slack fonts in public/fonts in your project.
 
 ```tsx
 import React from 'react';

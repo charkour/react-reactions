@@ -1,5 +1,5 @@
 import React from 'react';
-import YoutubeCounterButton from './YoutubeCounterButton';
+import YoutubeCounterButton from './components/YoutubeCounterButton';
 
 export interface YoutubeCounterProps {
   like?: string;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Reaction } from '../../helpers';
-import ReactionBarSelectorEmoji from './ReactionBarSelectorEmoji';
+import ReactionBarSelectorEmoji from './components/ReactionBarSelectorEmoji';
 
 export interface ReactionBarSelectorProps {
   iconSize?: number;

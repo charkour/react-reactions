@@ -1,6 +1,6 @@
 import React from 'react';
 import { icons } from '../../helpers';
-import FacebookSelectorEmoji from './FacebookSelectorEmoji';
+import FacebookSelectorEmoji from './components/FacebookSelectorEmoji';
 
 // TODO: use the custom reaction bar
 export interface FacebookSelectorProps {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { CounterObject, groupBy, Hover, HoverStyle } from '../../helpers';
-import SlackCounterGroup from './SlackCounterGroup';
-import SlackCSS from './SlackCSS';
+import SlackCounterGroup from './components/SlackCounterGroup';
+import SlackCSS from './components/SlackCSS';
 
 export interface SlackCounterProps {
   counters?: CounterObject[];
