@@ -22,10 +22,10 @@ jobs:
       - run: npm install
 
       - name: Lint
-        run: npm lint
+        run: npm run lint
 
       - name: Test
         run: npm test --ci --coverage --maxWorkers=2
 
       - name: Build
-        run: npm build
+        run: npm run build

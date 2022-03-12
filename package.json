@@ -10,6 +10,7 @@
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "fix": "echo 'add your scripts here'",
+    "test": "echo 'add your scripts here'",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "turbo": "turbo"
