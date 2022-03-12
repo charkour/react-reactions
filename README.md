@@ -36,8 +36,8 @@ npm i @charkour/react-reactions
 ### Reaction Bar Selector
 
 ```tsx
-import React from 'react';
-import { ReactionBarSelector } from '@charkour/react-reactions';
+import React from "react";
+import { ReactionBarSelector } from "@charkour/react-reactions";
 
 const Component = () => {
   return <ReactionBarSelector />;
@@ -63,15 +63,15 @@ _Note_: When passing an `<img>` as a Reaction. Specify the `iconSize` as the hei
 ### Reaction Counter
 
 ```tsx
-import React from 'react';
-import { ReactionCounter } from '@charkour/react-reactions';
+import React from "react";
+import { ReactionCounter } from "@charkour/react-reactions";
 
 const Component = () => {
   return <ReactionCounter />;
 };
 ```
 
-**Props:***
+**Props:\***
 
 `iconSize?: number` - String icon pixel size. Defaults to `24px`
 
@@ -99,9 +99,11 @@ const Component = () => {
 
 ### Slack Selector
 
+Note: You will need to include the slack fonts in public/fonts in your project.
+
 ```tsx
-import React from 'react';
-import { SlackSelector } from '@charkour/react-reactions';
+import React from "react";
+import { SlackSelector } from "@charkour/react-reactions";
 
 const Component = () => {
   return <SlackSelector />;
@@ -125,8 +127,8 @@ const Component = () => {
 ### Github Selector
 
 ```tsx
-import React from 'react';
-import { GithubSelector } from '@charkour/react-reactions';
+import React from "react";
+import { GithubSelector } from "@charkour/react-reactions";
 
 const Component = () => {
   return <GithubSelector />;
@@ -144,8 +146,8 @@ const Component = () => {
 ### Facebook Selector
 
 ```tsx
-import React from 'react';
-import { FacebookSelector } from '@charkour/react-reactions';
+import React from "react";
+import { FacebookSelector } from "@charkour/react-reactions";
 
 const Component = () => {
   return <FacebookSelector />;
@@ -165,8 +167,8 @@ const Component = () => {
 ### Pokemon Selector
 
 ```tsx
-import React from 'react';
-import { PokemonSelector } from '@charkour/react-reactions';
+import React from "react";
+import { PokemonSelector } from "@charkour/react-reactions";
 
 const Component = () => {
   return <PokemonSelector />;
@@ -188,8 +190,8 @@ const Component = () => {
 ### Github Counter
 
 ```tsx
-import React from 'react';
-import { GithubCounter } from '@charkour/react-reactions';
+import React from "react";
+import { GithubCounter } from "@charkour/react-reactions";
 
 const Component = () => {
   return <GithubCounter />;
@@ -218,8 +220,8 @@ const Component = () => {
 ### Youtube Counter
 
 ```tsx
-import React from 'react';
-import { YoutubeCounter } from '@charkour/react-reactions';
+import React from "react";
+import { YoutubeCounter } from "@charkour/react-reactions";
 
 const Component = () => {
   return <YoutubeCounter />;
@@ -241,8 +243,8 @@ const Component = () => {
 ### Facebook Counter
 
 ```tsx
-import React from 'react';
-import { FacebookCounter } from '@charkour/react-reactions';
+import React from "react";
+import { FacebookCounter } from "@charkour/react-reactions";
 
 const Component = () => {
   return <FacebookCounter />;
@@ -275,8 +277,8 @@ const Component = () => {
 ### Pokemon Counter
 
 ```tsx
-import React from 'react';
-import { PokemonCounter } from '@charkour/react-reactions';
+import React from "react";
+import { PokemonCounter } from "@charkour/react-reactions";
 
 const Component = () => {
   return <PokemonCounter />;
@@ -309,8 +311,8 @@ const Component = () => {
 ### Slack Counter
 
 ```tsx
-import React from 'react';
-import { SlackCounter } from '@charkour/react-reactions';
+import React from "react";
+import { SlackCounter } from "@charkour/react-reactions";
 
 const Component = () => {
   return <SlackCounter />;
