@@ -52,5 +52,3 @@ const tabStyleActive = {
   color: '#9e9ea6',
   borderBottom: '3px solid #2ab27b',
 };
-
-export default SlackSelectorHeaderTab;

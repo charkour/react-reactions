@@ -1,5 +1,6 @@
 import React from 'react';
-import FacebookCounter, {
+import {
+  FacebookCounter,
   FacebookCounterProps,
 } from '../facebook/FacebookCounter';
 
@@ -10,5 +11,3 @@ export const PokemonCounter: React.VFC<PokemonCounterProps> = (
 ) => {
   return <FacebookCounter {...props} variant="pokemon" />;
 };
-
-export default PokemonCounter;

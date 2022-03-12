@@ -83,5 +83,3 @@ const counterStyle = {
   cursor: 'pointer',
   alignItems: 'center',
 };
-
-export default ReactionCounter;

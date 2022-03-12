@@ -1,5 +1,5 @@
 import React from 'react';
-import SlackSelectorHeaderTab from './SlackSelectorHeaderTab';
+import { SlackSelectorHeaderTab } from './SlackSelectorHeaderTab';
 
 interface Tab {
   icon: string;
@@ -83,5 +83,3 @@ SlackSelectorHeader.defaultProps = {
     },
   ],
 };
-
-export default SlackSelectorHeader;

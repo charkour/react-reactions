@@ -1,3 +1,3 @@
 export * from './components';
-export { default as GithubCounter } from './GithubCounter';
-export { default as GithubSelector } from './GithubSelector';
+export { GithubCounter } from './GithubCounter';
+export { GithubSelector } from './GithubSelector';

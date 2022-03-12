@@ -79,5 +79,3 @@ const tooltipStyle: React.CSSProperties = {
   transition: 'opacity 0.1s ease-in-out',
 };
 const tooltipStyleHover = { opacity: '1' };
-
-export default GithubCounterGroup;

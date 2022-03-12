@@ -28,5 +28,3 @@ export const Hover: React.FC<HoverProps> = ({
     </HoverContext.Provider>
   );
 };
-
-export default Hover;

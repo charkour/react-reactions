@@ -46,5 +46,3 @@ const emojiStyleHover = {
 const wrapStyleActive = {
   backgroundColor: '#f2f8fa',
 };
-
-export default GithubSelectorEmoji;

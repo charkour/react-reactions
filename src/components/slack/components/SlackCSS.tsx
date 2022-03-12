@@ -33,5 +33,3 @@ export const SlackCSS = () => {
     />
   );
 };
-
-export default SlackCSS;

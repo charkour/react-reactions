@@ -1,3 +1,3 @@
 export * from './components';
-export { default as ReactionBarSelector } from './ReactionBarSelector';
-export { default as ReactionCounter } from './ReactionCounter';
+export { ReactionBarSelector } from './ReactionBarSelector';
+export { ReactionCounter } from './ReactionCounter';

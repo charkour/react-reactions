@@ -1,5 +1,5 @@
 import React from 'react';
-import GithubSelectorEmoji from './components/GithubSelectorEmoji';
+import { GithubSelectorEmoji } from './components/GithubSelectorEmoji';
 
 export interface GithubSelectorProps {
   reactions?: string[];
@@ -61,5 +61,3 @@ const emojiStyle = {
   display: 'flex',
   margin: '0 6px',
 };
-
-export default GithubSelector;

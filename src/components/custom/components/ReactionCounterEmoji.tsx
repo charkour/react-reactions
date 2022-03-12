@@ -38,5 +38,3 @@ export const ReactionCounterEmoji: React.VFC<ReactionCounterEmojiProps> = ({
     </div>
   );
 };
-
-export default ReactionCounterEmoji;

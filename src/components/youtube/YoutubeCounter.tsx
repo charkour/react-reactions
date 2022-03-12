@@ -1,5 +1,5 @@
 import React from 'react';
-import YoutubeCounterButton from './components/YoutubeCounterButton';
+import { YoutubeCounterButton } from './components/YoutubeCounterButton';
 
 export interface YoutubeCounterProps {
   like?: string;
@@ -61,5 +61,3 @@ const counterStyle = {
 const spaceStyle = {
   width: '12px',
 };
-
-export default YoutubeCounter;

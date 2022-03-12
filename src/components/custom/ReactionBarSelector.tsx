@@ -1,6 +1,6 @@
 import React from 'react';
 import { Reaction } from '../../helpers';
-import ReactionBarSelectorEmoji from './components/ReactionBarSelectorEmoji';
+import { ReactionBarSelectorEmoji } from './components/ReactionBarSelectorEmoji';
 
 export interface ReactionBarSelectorProps {
   iconSize?: number;
@@ -59,5 +59,3 @@ const wrapStyle = {
   display: 'flex',
   width: 'fit-content',
 };
-
-export default ReactionBarSelector;

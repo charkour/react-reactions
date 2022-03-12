@@ -1,3 +1,3 @@
 export * from './components';
-export { default as SlackCounter } from './SlackCounter';
-export { default as SlackSelector } from './SlackSelector';
+export { SlackCounter } from './SlackCounter';
+export { SlackSelector } from './SlackSelector';

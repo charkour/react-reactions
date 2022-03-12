@@ -1,11 +1,11 @@
-export { default as emoji } from './emoji';
+export { emoji } from './emoji';
 export * from './groupBy';
-export { default as Hover } from './Hover';
+export { Hover } from './Hover';
 export * from './HoverStyle';
-export { default as icons } from './icons';
+export { icons } from './icons';
 export * from './interfaces';
 export * from './slack';
 export * from './strings';
 export * from './types';
 export * from './useHover';
-export { default as withActive } from './withActive';
+export { withActive } from './withActive';

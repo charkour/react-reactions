@@ -90,5 +90,3 @@ const groupStyleActive = {
 const emojiStyleNoNames = {
   paddingRight: '0',
 };
-
-export default SlackCounterGroup;

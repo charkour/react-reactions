@@ -1,5 +1,5 @@
 import React from 'react';
-import icons from '../../../helpers/icons';
+import { icons } from '../../../helpers/icons';
 
 export interface FacebookCounterReactionProps {
   reaction: string;
@@ -26,5 +26,3 @@ export const FacebookCounterReaction: React.VFC<
 
   return <div style={reactionStyle} />;
 };
-
-export default FacebookCounterReaction;

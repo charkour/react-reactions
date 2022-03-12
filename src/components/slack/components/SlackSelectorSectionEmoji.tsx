@@ -42,5 +42,3 @@ const emojiStyle = {
   height: '22px',
   lineHeight: '26px',
 };
-
-export default SlackSelectorSectionEmoji;

@@ -20,5 +20,3 @@ export const withActive = (Component: React.ElementType) => {
     );
   };
 };
-
-export default withActive;

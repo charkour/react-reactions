@@ -62,5 +62,3 @@ const labelStyle: React.CSSProperties = {
   opacity: '0',
 };
 const iconStyleHover = { transform: 'scale(1.3)' };
-
-export default FacebookSelectorEmoji;

@@ -1,5 +1,5 @@
 import React from 'react';
-import SlackSelectorSection from './SlackSelectorSection';
+import { SlackSelectorSection } from './SlackSelectorSection';
 
 export interface SlackSelectorFooterProps {
   onSelect: (id: string) => void;
@@ -37,5 +37,3 @@ const leftStyle: React.CSSProperties = {
 const rightStyle = {
   paddingRight: '6px',
 };
-
-export default SlackSelectorFooter;

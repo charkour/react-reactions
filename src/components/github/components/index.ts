@@ -1,2 +1,2 @@
-export { default as GithubCounterGroup } from './GithubCounterGroup';
-export { default as GithubSelectorEmoji } from './GithubSelectorEmoji';
+export { GithubCounterGroup } from './GithubCounterGroup';
+export { GithubSelectorEmoji } from './GithubSelectorEmoji';

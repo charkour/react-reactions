@@ -76,5 +76,3 @@ const tooltipStyleHover = {
 const buttonStyleActive = {
   opacity: '1',
 };
-
-export default YoutubeCounterButton;

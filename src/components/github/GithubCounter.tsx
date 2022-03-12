@@ -1,6 +1,6 @@
 import React from 'react';
 import { CounterObject, groupBy, Hover, HoverStyle } from '../../helpers';
-import GithubCounterGroup from './components/GithubCounterGroup';
+import { GithubCounterGroup } from './components/GithubCounterGroup';
 
 export interface GithubCounterProps {
   counters?: CounterObject[];
@@ -86,5 +86,3 @@ const addStyle = {
   transition: 'opacity 0.1s ease-in-out',
 };
 const addStyleHover = { opacity: '1' };
-
-export default GithubCounter;

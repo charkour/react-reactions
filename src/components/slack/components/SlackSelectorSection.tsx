@@ -1,6 +1,6 @@
 import React from 'react';
 import { emojiColors, sectionSlugToName } from '../../../helpers/slack';
-import SlackSelectorSectionEmoji from './SlackSelectorSectionEmoji';
+import { SlackSelectorSectionEmoji } from './SlackSelectorSectionEmoji';
 
 export interface SlackSelectorSectionProps {
   slug?: string;
@@ -43,5 +43,3 @@ const titleStyle: React.CSSProperties = {
   lineHeight: '1.5rem',
   margin: '0 6px',
 };
-
-export default SlackSelectorSection;

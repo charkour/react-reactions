@@ -1,6 +1,6 @@
 import React from 'react';
 import { CounterObject, groupBy, listOfNames } from '../../helpers';
-import FacebookCounterReaction from './components/FacebookCounterReaction';
+import { FacebookCounterReaction } from './components/FacebookCounterReaction';
 
 export interface FacebookCounterProps {
   counters?: CounterObject[];
@@ -99,5 +99,3 @@ const nameStyle = {
   paddingLeft: '4px',
   marginTop: '2px',
 };
-
-export default FacebookCounter;

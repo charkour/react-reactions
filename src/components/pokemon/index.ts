@@ -1,2 +1,2 @@
-export { default as PokemonCounter } from './PokemonCounter';
-export { default as PokemonSelector } from './PokemonSelector';
+export { PokemonCounter } from './PokemonCounter';
+export { PokemonSelector } from './PokemonSelector';

@@ -1,6 +1,6 @@
 import React from 'react';
-import emoji from '../../../helpers/emoji';
-import SlackSelectorSection from './SlackSelectorSection';
+import { emoji } from '../../../helpers/emoji';
+import { SlackSelectorSection } from './SlackSelectorSection';
 
 export interface SlackSelectorItemsProps {
   scrollHeight: string;
@@ -59,5 +59,3 @@ const sectionsStyle = {
   padding: '4px 4px 0',
   background: '#fff',
 };
-
-export default SlackSelectorItems;

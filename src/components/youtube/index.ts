@@ -1,2 +1,2 @@
 export * from './components';
-export { default as YoutubeCounter } from './YoutubeCounter';
+export { YoutubeCounter } from './YoutubeCounter';

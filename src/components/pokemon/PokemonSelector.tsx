@@ -1,6 +1,7 @@
 import React from 'react';
-import FacebookSelector, {
+import {
   defaultProps,
+  FacebookSelector,
   FacebookSelectorProps,
 } from '../facebook/FacebookSelector';
 
@@ -20,5 +21,3 @@ export const PokemonSelector: React.VFC<PokemonSelectorProps> = ({
     />
   );
 };
-
-export default PokemonSelector;

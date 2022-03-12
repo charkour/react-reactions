@@ -61,5 +61,3 @@ const iconStyle = {
   transition: '200ms transform cubic-bezier(0.23, 1, 0.32, 1)',
 };
 const iconStyleHover = { transform: 'scale(1.3)' };
-
-export default ReactionBarSelectorEmoji;

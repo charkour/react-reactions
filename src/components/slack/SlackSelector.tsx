@@ -1,8 +1,10 @@
 import React from 'react';
-import SlackCSS from './components/SlackCSS';
-import SlackSelectorFooter from './components/SlackSelectorFooter';
-import SlackSelectorHeader from './components/SlackSelectorHeader';
-import SlackSelectorItems from './components/SlackSelectorItems';
+import {
+  SlackCSS,
+  SlackSelectorFooter,
+  SlackSelectorHeader,
+  SlackSelectorItems,
+} from './components';
 
 export interface SlackSelectorProps {
   scrollHeight?: string;
@@ -80,5 +82,3 @@ export const defaultProps: Required<SlackSelectorProps> = {
     console.log(id);
   },
 };
-
-export default SlackSelector;

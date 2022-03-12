@@ -1,7 +1,6 @@
 import React from 'react';
 import { CounterObject, groupBy, Hover, HoverStyle } from '../../helpers';
-import SlackCounterGroup from './components/SlackCounterGroup';
-import SlackCSS from './components/SlackCSS';
+import { SlackCounterGroup, SlackCSS } from './components';
 
 export interface SlackCounterProps {
   counters?: CounterObject[];
@@ -82,5 +81,3 @@ const groupStyle = {
 const addStyleHover = {
   opacity: '1',
 };
-
-export default SlackCounter;

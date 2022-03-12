@@ -1,1 +1,1 @@
-export { default as YoutubeCounterButton } from './YoutubeCounterButton';
+export { YoutubeCounterButton } from './YoutubeCounterButton';
