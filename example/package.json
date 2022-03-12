@@ -8,12 +8,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@charkour/react-reactions": "0.6.3",
+    "@charkour/react-reactions": "0.6.4",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
   "devDependencies": {
-    "@types/react": "17.0.39",
+    "@types/react": "17.0.40",
     "@types/react-dom": "17.0.13",
     "@vitejs/plugin-react": "1.2.0",
     "autoprefixer": "10.4.2",
