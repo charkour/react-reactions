@@ -1,13 +1,14 @@
 import { Meta, Story } from '@storybook/react';
 import React from 'react';
 import {
-  SlackSelectorSectionEmoji,
-  SlackSelectorSectionEmojiProps,
-} from './SlackSelectorSectionEmoji';
+  FacebookSelectorEmoji,
+  FacebookSelectorEmojiProps,
+} from '../src/components/facebook/components/FacebookSelectorEmoji';
+import { icons } from '../src/helpers';
 
 const meta: Meta = {
-  title: 'SlackSelectorSectionEmoji',
-  component: SlackSelectorSectionEmoji,
+  title: 'FacebookSelectorEmoji',
+  component: FacebookSelectorEmoji,
   argTypes: {
     children: {
       control: {
@@ -22,15 +23,20 @@ const meta: Meta = {
 
 export default meta;
 
-const Template: Story<SlackSelectorSectionEmojiProps> = (args) => (
-  <SlackSelectorSectionEmoji {...args} />
-);
+const Template: Story<FacebookSelectorEmojiProps> = (args) => {
+  return (
+    <div style={{ height: 30, width: 30 }}>
+      <FacebookSelectorEmoji {...args} />
+    </div>
+  );
+};
 
 // By passing using the Args format for exported stories, you can control the props for a component for reuse in a test
 // https://storybook.js.org/docs/react/workflows/unit-testing
 export const Default = Template.bind({});
 
 Default.args = {
-  hoverColor: 'blue',
-  emoji: '🥰',
+  icon: icons.find('facebook', 'haha'),
+  label: 'cool',
+  onSelect: (label: string) => console.log(label),
 };

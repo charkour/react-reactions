@@ -1,10 +1,10 @@
 import { Meta, Story } from '@storybook/react';
 import React from 'react';
-import '../../../../stories/helper.css';
 import {
   ReactionCounterEmoji,
   ReactionCounterEmojiProps,
-} from './ReactionCounterEmoji';
+} from '../src/components/custom/components/ReactionCounterEmoji';
+import './helper.css';
 
 const meta: Meta = {
   title: 'ReactionCounterEmoji',

@@ -1,7 +1,10 @@
 import { Meta, Story } from '@storybook/react';
 import React from 'react';
-import '../../../stories/helper.css';
-import { ReactionCounter, ReactionCounterProps } from './ReactionCounter';
+import {
+  ReactionCounter,
+  ReactionCounterProps,
+} from '../src/components/custom/ReactionCounter';
+import './helper.css';
 
 const meta: Meta = {
   title: 'ReactionCounter',

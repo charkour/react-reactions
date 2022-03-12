@@ -1,6 +1,9 @@
 import { Meta, Story } from '@storybook/react';
 import React from 'react';
-import { YoutubeCounter, YoutubeCounterProps } from './YoutubeCounter';
+import {
+  YoutubeCounter,
+  YoutubeCounterProps,
+} from '../src/components/youtube/YoutubeCounter';
 
 const meta: Meta = {
   title: 'YoutubeCounter',

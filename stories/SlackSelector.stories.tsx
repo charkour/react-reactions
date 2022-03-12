@@ -1,13 +1,14 @@
 import { Meta, Story } from '@storybook/react';
 import React from 'react';
 import {
-  SlackSelectorHeader,
-  SlackSelectorHeaderProps,
-} from './SlackSelectorHeader';
+  defaultProps,
+  SlackSelector,
+  SlackSelectorProps,
+} from '../src/components/slack/SlackSelector';
 
 const meta: Meta = {
-  title: 'SlackSelectorHeader',
-  component: SlackSelectorHeader,
+  title: 'SlackSelector',
+  component: SlackSelector,
   argTypes: {
     children: {
       control: {
@@ -22,14 +23,12 @@ const meta: Meta = {
 
 export default meta;
 
-const Template: Story<SlackSelectorHeaderProps> = (args) => (
-  <SlackSelectorHeader {...args} />
+const Template: Story<SlackSelectorProps> = (args) => (
+  <SlackSelector {...args} />
 );
 
 // By passing using the Args format for exported stories, you can control the props for a component for reuse in a test
 // https://storybook.js.org/docs/react/workflows/unit-testing
 export const Default = Template.bind({});
 
-Default.args = {
-  active: 'mine',
-};
+Default.args = { ...defaultProps };

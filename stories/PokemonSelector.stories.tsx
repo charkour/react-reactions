@@ -1,7 +1,10 @@
 import { Meta, Story } from '@storybook/react';
 import React from 'react';
-import { defaultProps } from '../facebook/FacebookSelector';
-import { PokemonSelector, PokemonSelectorProps } from './PokemonSelector';
+import { defaultProps } from '../src/components/facebook/FacebookSelector';
+import {
+  PokemonSelector,
+  PokemonSelectorProps,
+} from '../src/components/pokemon/PokemonSelector';
 import './PokemonSelector.css';
 
 const meta: Meta = {

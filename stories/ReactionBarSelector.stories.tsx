@@ -1,11 +1,11 @@
 import { Meta, Story } from '@storybook/react';
 import React from 'react';
-import '../../../stories/helper.css';
 import {
   defaultProps,
   ReactionBarSelector,
   ReactionBarSelectorProps,
-} from './ReactionBarSelector';
+} from '../src/components/custom/ReactionBarSelector';
+import './helper.css';
 
 const meta: Meta = {
   title: 'ReactionBarSelector',

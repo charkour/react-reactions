@@ -3,7 +3,7 @@ import React from 'react';
 import {
   SlackSelectorFooter,
   SlackSelectorFooterProps,
-} from './SlackSelectorFooter';
+} from '../src/components/slack/components/SlackSelectorFooter';
 
 const meta: Meta = {
   title: 'SlackSelectorFooter',

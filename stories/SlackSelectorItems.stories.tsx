@@ -3,7 +3,7 @@ import React from 'react';
 import {
   SlackSelectorItems,
   SlackSelectorItemsProps,
-} from './SlackSelectorItems';
+} from '../src/components/slack/components/SlackSelectorItems';
 
 const meta: Meta = {
   title: 'SlackSelectorItems',

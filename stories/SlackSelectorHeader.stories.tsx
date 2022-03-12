@@ -1,13 +1,13 @@
 import { Meta, Story } from '@storybook/react';
 import React from 'react';
 import {
-  GithubCounterGroup,
-  GithubCounterGroupProps,
-} from './GithubCounterGroup';
+  SlackSelectorHeader,
+  SlackSelectorHeaderProps,
+} from '../src/components/slack/components/SlackSelectorHeader';
 
 const meta: Meta = {
-  title: 'GithubCounterGroup',
-  component: GithubCounterGroup,
+  title: 'SlackSelectorHeader',
+  component: SlackSelectorHeader,
   argTypes: {
     children: {
       control: {
@@ -22,8 +22,8 @@ const meta: Meta = {
 
 export default meta;
 
-const Template: Story<GithubCounterGroupProps> = (args) => (
-  <GithubCounterGroup {...args} />
+const Template: Story<SlackSelectorHeaderProps> = (args) => (
+  <SlackSelectorHeader {...args} />
 );
 
 // By passing using the Args format for exported stories, you can control the props for a component for reuse in a test
@@ -31,8 +31,5 @@ const Template: Story<GithubCounterGroupProps> = (args) => (
 export const Default = Template.bind({});
 
 Default.args = {
-  emoji: '🎉',
-  count: '3',
-  names: ['Jon', 'Jo', 'Jeff'],
-  active: true,
+  active: 'mine',
 };

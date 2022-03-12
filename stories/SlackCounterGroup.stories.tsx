@@ -1,14 +1,13 @@
 import { Meta, Story } from '@storybook/react';
 import React from 'react';
 import {
-  defaultProps,
-  GithubCounter,
-  GithubCounterProps,
-} from './GithubCounter';
+  SlackCounterGroup,
+  SlackCounterGroupProps,
+} from '../src/components/slack/components/SlackCounterGroup';
 
 const meta: Meta = {
-  title: 'GithubCounter',
-  component: GithubCounter,
+  title: 'SlackCounterGroup',
+  component: SlackCounterGroup,
   argTypes: {
     children: {
       control: {
@@ -23,12 +22,17 @@ const meta: Meta = {
 
 export default meta;
 
-const Template: Story<GithubCounterProps> = (args) => (
-  <GithubCounter {...args} />
+const Template: Story<SlackCounterGroupProps> = (args) => (
+  <SlackCounterGroup {...args} />
 );
 
 // By passing using the Args format for exported stories, you can control the props for a component for reuse in a test
 // https://storybook.js.org/docs/react/workflows/unit-testing
 export const Default = Template.bind({});
 
-Default.args = { ...defaultProps };
+Default.args = {
+  emoji: '🎉',
+  count: '3',
+  names: ['Jon', 'Jo', 'Jeff'],
+  active: true,
+};

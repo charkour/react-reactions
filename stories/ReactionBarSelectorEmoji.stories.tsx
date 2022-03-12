@@ -1,10 +1,10 @@
 import { Meta, Story } from '@storybook/react';
 import React from 'react';
-import '../../../../stories/helper.css';
 import {
   ReactionBarSelectorEmoji,
   ReactionBarSelectorEmojiProps,
-} from './ReactionBarSelectorEmoji';
+} from '../src/components/custom/components/ReactionBarSelectorEmoji';
+import './helper.css';
 
 const meta: Meta = {
   title: 'ReactionBarSelectorEmoji',
