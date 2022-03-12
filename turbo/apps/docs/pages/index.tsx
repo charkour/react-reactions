@@ -1,10 +1,10 @@
-import { Button } from "ui";
+import { FacebookCounter } from 'ui';
 
 export default function Docs() {
   return (
     <div>
       <h1>Docs</h1>
-      <Button />
+      <FacebookCounter />
     </div>
   );
 }
