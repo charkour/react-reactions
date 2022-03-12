@@ -1,84 +1,25 @@
 {
-  "name": "@charkour/react-reactions",
-  "version": "0.6.4",
-  "private": false,
-  "description": "😲 Create custom reaction pickers and counters or use your favorites!",
-  "keywords": [
-    "react",
-    "reactions",
-    "custom",
-    "reaction picker",
-    "react-component",
-    "reaction-picker",
-    "slack",
-    "pokemon",
-    "github",
-    "facebook",
-    "youtube",
-    "selector",
-    "counter"
-  ],
-  "homepage": "https://github.com/charkour/react-reactions",
-  "bugs": {
-    "url": "https://github.com/charkour/react-reactions/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/charkour/react-reactions.git"
-  },
-  "license": "MIT",
-  "author": "Charles Kornoelje",
-  "main": "dist/index.js",
-  "module": "dist/react-reactions.esm.js",
-  "typings": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "src"
+  "name": "turborepo-basic-shared",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
   ],
   "scripts": {
-    "build": "tsdx build",
-    "build-storybook": "build-storybook",
-    "fix": "tsdx lint --fix src test",
-    "postinstall": "husky install",
-    "lint": "tsdx lint src test",
-    "prepare": "tsdx build",
-    "prepublishOnly": "pinst --disable",
-    "postpublish": "pinst --enable",
-    "storybook": "start-storybook -p 6006",
-    "test": "tsdx test --passWithNoTests"
-  },
-  "prettier": {
-    "printWidth": 80,
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "es5"
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "fix": "echo 'add your scripts here'",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
-    "@babel/core": "7.17.5",
-    "@storybook/addon-actions": "6.4.19",
-    "@storybook/addon-essentials": "6.4.19",
-    "@storybook/addon-links": "6.4.19",
-    "@storybook/react": "6.4.19",
-    "@types/react": "17.0.39",
-    "@types/react-dom": "17.0.13",
-    "autoprefixer": "^10.4.2",
-    "cssnano": "^5.1.0",
-    "eslint-plugin-react-hooks": "4.3.0",
-    "husky": "7.0.4",
-    "pinst": "3.0.0",
-    "postcss": "^8.4.8",
-    "postcss-import": "^14.0.2",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "rollup-plugin-postcss": "^4.0.2",
-    "tsdx": "0.14.1",
-    "tslib": "2.3.1",
-    "typescript": "4.6.2"
-  },
-  "peerDependencies": {
-    "react": ">=16"
+    "prettier": "^2.5.1",
+    "turbo": "latest"
   },
   "engines": {
-    "node": ">=10"
-  }
+    "npm": ">=7.0.0",
+    "node": ">=14.0.0"
+  },
+  "packageManager": "npm@8.5.4"
 }
