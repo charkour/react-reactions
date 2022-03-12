@@ -1,4 +1,4 @@
-import { PokemonCounter } from 'ui';
+import { PokemonCounter } from "@charkour/react-reactions";
 
 export default function Web() {
   return (

@@ -1,4 +1,4 @@
-import { FacebookCounter } from 'ui';
+import { FacebookCounter } from "@charkour/react-reactions";
 
 export default function Docs() {
   return (
