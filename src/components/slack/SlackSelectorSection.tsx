@@ -8,7 +8,7 @@ export interface SlackSelectorSectionProps {
   onSelect: (emoji: string) => void;
 }
 
-export const SlackSelectorSection: React.VFC<SlackSelectorSectionProps> = ({
+export const SlackSelectorSection: React.FC<SlackSelectorSectionProps> = ({
   slug = '',
   emojis,
   onSelect,

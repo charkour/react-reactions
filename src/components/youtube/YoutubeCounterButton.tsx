@@ -11,7 +11,7 @@ export interface YoutubeCounterButtonProps {
   // activeColor: string;
 }
 
-export const YoutubeCounterButton: React.VFC<YoutubeCounterButtonProps> = ({
+export const YoutubeCounterButton: React.FC<YoutubeCounterButtonProps> = ({
   position,
   number,
   tooltip,

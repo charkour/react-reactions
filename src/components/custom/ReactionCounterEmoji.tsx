@@ -7,7 +7,7 @@ export interface ReactionCounterEmojiProps {
   index: number;
 }
 
-export const ReactionCounterEmoji: React.VFC<ReactionCounterEmojiProps> = ({
+export const ReactionCounterEmoji: React.FC<ReactionCounterEmojiProps> = ({
   node,
   bg,
   iconSize,

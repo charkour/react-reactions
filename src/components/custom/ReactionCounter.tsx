@@ -17,7 +17,7 @@ export interface ReactionCounterProps
   onClick?: () => void;
 }
 
-export const ReactionCounter: React.VFC<ReactionCounterProps> = ({
+export const ReactionCounter: React.FC<ReactionCounterProps> = ({
   reactions,
   user,
   important,

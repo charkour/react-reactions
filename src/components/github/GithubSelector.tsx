@@ -6,7 +6,7 @@ export interface GithubSelectorProps {
   onSelect?: (shortCode: string) => void;
 }
 
-export const GithubSelector: React.VFC<GithubSelectorProps> = ({
+export const GithubSelector: React.FC<GithubSelectorProps> = ({
   reactions = defaultProps.reactions,
   onSelect = defaultProps.onSelect,
 }) => {

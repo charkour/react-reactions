@@ -10,7 +10,7 @@ export interface FacebookSelectorProps {
   onSelect?: (label: string) => void;
 }
 
-export const FacebookSelector: React.VFC<FacebookSelectorProps> = ({
+export const FacebookSelector: React.FC<FacebookSelectorProps> = ({
   iconSize = defaultProps.iconSize,
   reactions = defaultProps.reactions,
   variant = defaultProps.variant,

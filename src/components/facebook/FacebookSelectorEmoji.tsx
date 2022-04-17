@@ -7,8 +7,8 @@ export interface FacebookSelectorEmojiProps {
   onSelect: (label: string) => void;
 }
 
-export const FacebookSelectorEmoji: React.VFC<FacebookSelectorEmojiProps> = withActive(
-  ({ icon, label, onSelect }) => {
+export const FacebookSelectorEmoji: React.FC<FacebookSelectorEmojiProps> =
+  withActive(({ icon, label, onSelect }) => {
     const iconStyle = React.useMemo(() => {
       return {
         paddingBottom: '100%',
@@ -36,8 +36,7 @@ export const FacebookSelectorEmoji: React.VFC<FacebookSelectorEmojiProps> = with
         />
       </Hover>
     );
-  }
-);
+  });
 
 const wrapStyle: React.CSSProperties = {
   padding: '5px',

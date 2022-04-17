@@ -6,7 +6,7 @@ import FacebookSelector, {
 
 export type PokemonSelectorProps = Omit<FacebookSelectorProps, 'variant'>;
 
-export const PokemonSelector: React.VFC<PokemonSelectorProps> = ({
+export const PokemonSelector: React.FC<PokemonSelectorProps> = ({
   reactions = defaultProps.reactions,
   iconSize = defaultProps.iconSize,
   onSelect = defaultProps.onSelect,

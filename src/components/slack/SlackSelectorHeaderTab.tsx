@@ -8,7 +8,7 @@ export interface SlackSelectorHeaderTabProps {
   active?: boolean;
 }
 
-export const SlackSelectorHeaderTab: React.VFC<SlackSelectorHeaderTabProps> = ({
+export const SlackSelectorHeaderTab: React.FC<SlackSelectorHeaderTabProps> = ({
   onClick,
   id,
   icon,

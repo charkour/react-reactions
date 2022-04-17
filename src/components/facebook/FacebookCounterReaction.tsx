@@ -8,12 +8,9 @@ export interface FacebookCounterReactionProps {
   variant: 'facebook' | 'pokemon';
 }
 
-export const FacebookCounterReaction: React.VFC<FacebookCounterReactionProps> = ({
-  reaction,
-  bg,
-  index,
-  variant,
-}) => {
+export const FacebookCounterReaction: React.FC<
+  FacebookCounterReactionProps
+> = ({ reaction, bg, index, variant }) => {
   const reactionStyle: React.CSSProperties = React.useMemo(() => {
     return {
       width: '16px',
