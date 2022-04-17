@@ -71,7 +71,7 @@ const Component = () => {
 };
 ```
 
-**Props:***
+**Props:\***
 
 `iconSize?: number` - String icon pixel size. Defaults to `24px`
 
@@ -92,6 +92,8 @@ const Component = () => {
 `className?: string` - Pass a string that applies to the counter container
 
 `onClick?: () => void` - Pass a callback that is added to the `onClick` property to the counter container
+
+`style?: React.CSSProperties` - Pass a style object to the counter container
 
 ![image](https://user-images.githubusercontent.com/33156025/135777827-803fac2d-d2c9-4734-8073-bd6e3a6d2160.png)
 
