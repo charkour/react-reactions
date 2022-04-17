@@ -15,6 +15,7 @@ export interface ReactionCounterProps
   showOthersAlways?: boolean;
   className?: string;
   onClick?: () => void;
+  style?: React.CSSProperties;
 }
 
 export const ReactionCounter: React.FC<ReactionCounterProps> = ({
@@ -28,6 +29,7 @@ export const ReactionCounter: React.FC<ReactionCounterProps> = ({
   showReactsOnly = false,
   showTotalOnly = false,
   showOthersAlways = true,
+  style,
 }) => {
   const groups = groupBy(reactions, 'label');
   const names = reactions.map(({ by }: ReactionCounterObject) => {
@@ -59,7 +61,11 @@ export const ReactionCounter: React.FC<ReactionCounterProps> = ({
   }, [iconSize]);
 
   return (
-    <div style={counterStyle} className={className} onClick={onClick}>
+    <div
+      style={{ ...counterStyle, ...style }}
+      className={className}
+      onClick={onClick}
+    >
       {Object.keys(groups).map((reaction, i, reactions) => (
         <ReactionCounterEmoji
           key={i}
