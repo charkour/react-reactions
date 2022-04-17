@@ -6,7 +6,7 @@ export interface ReactionBarSelectorEmojiProps {
   onSelect: (label: string) => void;
 }
 
-export const ReactionBarSelectorEmoji: React.VFC<ReactionBarSelectorEmojiProps> = ({
+export const ReactionBarSelectorEmoji: React.FC<ReactionBarSelectorEmojiProps> = ({
   reaction,
   onSelect,
 }) => {

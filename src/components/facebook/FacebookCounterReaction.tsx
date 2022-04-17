@@ -8,7 +8,7 @@ export interface FacebookCounterReactionProps {
   variant: 'facebook' | 'pokemon';
 }
 
-export const FacebookCounterReaction: React.VFC<FacebookCounterReactionProps> = ({
+export const FacebookCounterReaction: React.FC<FacebookCounterReactionProps> = ({
   reaction,
   bg,
   index,

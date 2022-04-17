@@ -8,7 +8,7 @@ export interface ReactionBarSelectorProps {
   onSelect?: (label: string) => void;
 }
 
-export const ReactionBarSelector: React.VFC<ReactionBarSelectorProps> = ({
+export const ReactionBarSelector: React.FC<ReactionBarSelectorProps> = ({
   iconSize = defaultProps.iconSize,
   reactions = defaultProps.reactions,
   onSelect = defaultProps.onSelect,

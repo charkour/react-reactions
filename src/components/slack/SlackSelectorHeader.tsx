@@ -10,7 +10,7 @@ export interface SlackSelectorHeaderProps {
   tabs?: Tab[];
 }
 
-export const SlackSelectorHeader: React.VFC<SlackSelectorHeaderProps> = ({
+export const SlackSelectorHeader: React.FC<SlackSelectorHeaderProps> = ({
   tabs = [],
 }) => {
   const [activeString, setActiveString] = React.useState('');

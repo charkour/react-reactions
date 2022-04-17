@@ -12,7 +12,7 @@ export interface GithubCounterGroupProps {
   active: boolean;
 }
 
-export const GithubCounterGroup: React.VFC<GithubCounterGroupProps> = ({
+export const GithubCounterGroup: React.FC<GithubCounterGroupProps> = ({
   emoji,
   count,
   onSelect,

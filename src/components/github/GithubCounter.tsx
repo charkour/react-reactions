@@ -9,7 +9,7 @@ export interface GithubCounterProps {
   onAdd?: () => void;
 }
 
-export const GithubCounter: React.VFC<GithubCounterProps> = ({
+export const GithubCounter: React.FC<GithubCounterProps> = ({
   counters = defaultProps.counters,
   user = defaultProps.user,
   onSelect = defaultProps.onSelect,

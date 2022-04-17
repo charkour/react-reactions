@@ -5,7 +5,7 @@ export interface SlackSelectorFooterProps {
   onSelect: (id: string) => void;
 }
 
-export const SlackSelectorFooter: React.VFC<SlackSelectorFooterProps> = ({
+export const SlackSelectorFooter: React.FC<SlackSelectorFooterProps> = ({
   onSelect,
 }) => {
   return (

@@ -11,7 +11,7 @@ export interface SlackSelectorProps {
   onSelect?: (id: string) => void;
 }
 
-export const SlackSelector: React.VFC<SlackSelectorProps> = ({
+export const SlackSelector: React.FC<SlackSelectorProps> = ({
   scrollHeight = defaultProps.scrollHeight,
   frequent = defaultProps.frequent,
   removeEmojis = defaultProps.removeEmojis,

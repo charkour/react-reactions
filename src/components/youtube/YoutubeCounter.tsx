@@ -10,7 +10,7 @@ export interface YoutubeCounterProps {
   didDislike?: boolean;
 }
 
-export const YoutubeCounter: React.VFC<YoutubeCounterProps> = ({
+export const YoutubeCounter: React.FC<YoutubeCounterProps> = ({
   like = defaultProps.like,
   dislike = defaultProps.dislike,
   onLikeClick = defaultProps.onLikeClick,

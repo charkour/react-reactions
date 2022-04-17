@@ -12,7 +12,7 @@ export interface FacebookCounterProps {
   alwaysShowOthers?: boolean;
 }
 
-export const FacebookCounter: React.VFC<FacebookCounterProps> = ({
+export const FacebookCounter: React.FC<FacebookCounterProps> = ({
   counters = defaultProps.counters,
   user = defaultProps.user,
   important = defaultProps.important,

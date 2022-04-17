@@ -10,7 +10,7 @@ export interface SlackCounterProps {
   onAdd?: () => void;
 }
 
-export const SlackCounter: React.VFC<SlackCounterProps> = ({
+export const SlackCounter: React.FC<SlackCounterProps> = ({
   counters = defaultProps.counters,
   user = defaultProps.user,
   onSelect = defaultProps.onSelect,

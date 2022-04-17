@@ -9,7 +9,7 @@ export interface SlackCounterGroupProps {
   active?: boolean;
   names?: string[];
 }
-export const SlackCounterGroup: React.VFC<SlackCounterGroupProps> = ({
+export const SlackCounterGroup: React.FC<SlackCounterGroupProps> = ({
   onSelect,
   emoji,
   count,

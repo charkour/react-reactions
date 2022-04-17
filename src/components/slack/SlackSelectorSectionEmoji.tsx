@@ -7,7 +7,7 @@ export interface SlackSelectorSectionEmojiProps {
   emoji: string;
 }
 
-export const SlackSelectorSectionEmoji: React.VFC<SlackSelectorSectionEmojiProps> = ({
+export const SlackSelectorSectionEmoji: React.FC<SlackSelectorSectionEmojiProps> = ({
   hoverColor,
   onSelect,
   emoji,

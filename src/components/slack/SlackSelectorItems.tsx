@@ -9,7 +9,7 @@ export interface SlackSelectorItemsProps {
   removeEmojis: string[];
 }
 
-export const SlackSelectorItems: React.VFC<SlackSelectorItemsProps> = ({
+export const SlackSelectorItems: React.FC<SlackSelectorItemsProps> = ({
   scrollHeight,
   frequent,
   onSelect,
