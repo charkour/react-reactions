@@ -71,7 +71,7 @@ const Component = () => {
 };
 ```
 
-**Props:\***
+**Props:***
 
 `iconSize?: number` - String icon pixel size. Defaults to `24px`
 
