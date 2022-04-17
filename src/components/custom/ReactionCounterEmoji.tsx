@@ -34,7 +34,9 @@ export const ReactionCounterEmoji: React.FC<ReactionCounterEmojiProps> = ({
 
   return (
     <div style={emojiContainerStyle}>
-      {React.cloneElement(node, { style: emojiStyle })}
+      {React.cloneElement(node, {
+        style: { ...emojiStyle, ...node.props.style },
+      })}
     </div>
   );
 };
