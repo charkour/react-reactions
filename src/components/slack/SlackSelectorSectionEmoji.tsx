@@ -7,9 +7,11 @@ export interface SlackSelectorSectionEmojiProps {
   emoji: string;
 }
 
-export const SlackSelectorSectionEmoji: React.FC<
-  SlackSelectorSectionEmojiProps
-> = ({ hoverColor, onSelect, emoji }) => {
+export const SlackSelectorSectionEmoji: React.FC<SlackSelectorSectionEmojiProps> = ({
+  hoverColor,
+  onSelect,
+  emoji,
+}) => {
   const wrapStyleHover = React.useMemo(() => {
     return { background: hoverColor };
   }, [hoverColor]);

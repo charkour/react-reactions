@@ -7,8 +7,8 @@ export interface GithubSelectorEmojiProps {
   active?: boolean;
 }
 
-export const GithubSelectorEmoji: React.FC<GithubSelectorEmojiProps> =
-  withActive(({ onSelect, shortCode, active = false }) => {
+export const GithubSelectorEmoji: React.FC<GithubSelectorEmojiProps> = withActive(
+  ({ onSelect, shortCode, active = false }) => {
     const handleClick = () => {
       onSelect(shortCode);
     };
@@ -23,7 +23,8 @@ export const GithubSelectorEmoji: React.FC<GithubSelectorEmojiProps> =
         </HoverStyle>
       </Hover>
     );
-  });
+  }
+);
 
 const wrapStyle = {
   padding: '8px 0',

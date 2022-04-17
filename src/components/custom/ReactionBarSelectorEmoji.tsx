@@ -6,9 +6,10 @@ export interface ReactionBarSelectorEmojiProps {
   onSelect: (label: string) => void;
 }
 
-export const ReactionBarSelectorEmoji: React.FC<
-  ReactionBarSelectorEmojiProps
-> = ({ reaction, onSelect }) => {
+export const ReactionBarSelectorEmoji: React.FC<ReactionBarSelectorEmojiProps> = ({
+  reaction,
+  onSelect,
+}) => {
   const { node, label } = reaction;
 
   const handleClick = () => {

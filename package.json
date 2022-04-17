@@ -38,7 +38,7 @@
   "scripts": {
     "build": "tsdx build",
     "build-storybook": "build-storybook",
-    "fix": "tsdx lint --fix src test",
+    "fix": "tsdx lint src test --fix",
     "postinstall": "husky install",
     "lint": "tsdx lint src test",
     "prepare": "tsdx build",
