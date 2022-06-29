@@ -10,10 +10,10 @@ export const ReactionBarSelectorEmoji: React.FC<ReactionBarSelectorEmojiProps> =
   reaction,
   onSelect,
 }) => {
-  const { node, label } = reaction;
+  const { node, label, key } = reaction;
 
   const handleClick = () => {
-    onSelect && onSelect(label);
+    onSelect && onSelect(key ?? label);
   };
 
   return (
