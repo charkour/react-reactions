@@ -5,7 +5,7 @@ import ReactionBarSelectorEmoji from './ReactionBarSelectorEmoji';
 export interface ReactionBarSelectorProps {
   iconSize?: number;
   reactions?: Reaction[];
-  onSelect?: (label: string) => void;
+  onSelect?: (key: string) => void;
 }
 
 export const ReactionBarSelector: React.FC<ReactionBarSelectorProps> = ({
@@ -27,7 +27,7 @@ export const ReactionBarSelector: React.FC<ReactionBarSelectorProps> = ({
     <div style={wrapStyle}>
       {reactions.map((reaction: Reaction) => {
         return (
-          <div style={emojiStyle} key={reaction.label}>
+          <div style={emojiStyle} key={reaction.key ?? reaction.label}>
             <ReactionBarSelectorEmoji reaction={reaction} onSelect={onSelect} />
           </div>
         );
@@ -38,16 +38,16 @@ export const ReactionBarSelector: React.FC<ReactionBarSelectorProps> = ({
 
 export const defaultProps: Required<ReactionBarSelectorProps> = {
   reactions: [
-    { node: <div>👍</div>, label: 'like' },
-    { node: <div>❤️</div>, label: 'love' },
-    { node: <div>😆</div>, label: 'haha' },
-    { node: <div>😮</div>, label: 'wow' },
-    { node: <div>😢</div>, label: 'sad' },
-    { node: <div>😡</div>, label: 'angry' },
+    { node: <div>👍</div>, label: 'like', key: 'satisfaction' },
+    { node: <div>❤️</div>, label: 'love', key: 'love' },
+    { node: <div>😆</div>, label: 'haha', key: 'happy' },
+    { node: <div>😮</div>, label: 'wow', key: 'surprise' },
+    { node: <div>😢</div>, label: 'sad', key: 'sad' },
+    { node: <div>😡</div>, label: 'angry', key: 'angry' },
   ],
   iconSize: 38,
-  onSelect: (label: string) => {
-    console.log(label);
+  onSelect: (key: string) => {
+    console.log(key);
   },
 };
 

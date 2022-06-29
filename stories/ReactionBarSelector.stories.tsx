@@ -40,6 +40,7 @@ Default.args = { ...defaultProps };
 Images.args = {
   reactions: [
     {
+      key: 'happy',
       label: 'haha',
       node: (
         <img
@@ -49,6 +50,7 @@ Images.args = {
       ),
     },
     {
+      key: 'sad',
       label: 'cry',
       node: (
         <img
@@ -58,6 +60,7 @@ Images.args = {
       ),
     },
     {
+      key: 'love',
       label: 'heart',
       node: (
         <img
@@ -67,6 +70,7 @@ Images.args = {
       ),
     },
     {
+      key: 'surprise',
       label: 'wow',
       node: (
         <img
