@@ -48,9 +48,11 @@ const Component = () => {
 
 `iconSize?: number` — String icon pixel size. Defaults to `38px`
 
-`reactions?: Reaction[];` — Array of Reaction objects `{label: "haha", node: <div>😄</div>}` to display.
+`reactions?: Reaction[];` — Array of Reaction objects `{label: "haha", node: <div>😄</div>, key: "smile"}` to display.
 
-`onSelect: (label: string) => void;` — Function callback when emoji is selected
+`onSelect: (key: string) => void;` — Function callback when emoji is selected
+
+`style?: React.CSSProperties` - Pass a style object to the selector container
 
 ![image](https://user-images.githubusercontent.com/33156025/111041592-e1ece100-8406-11eb-82f5-226b3839683c.png)
 
