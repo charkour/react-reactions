@@ -6,12 +6,14 @@ export interface ReactionBarSelectorProps {
   iconSize?: number;
   reactions?: Reaction[];
   onSelect?: (key: string) => void;
+  style?: React.CSSProperties;
 }
 
 export const ReactionBarSelector: React.FC<ReactionBarSelectorProps> = ({
   iconSize = defaultProps.iconSize,
   reactions = defaultProps.reactions,
   onSelect = defaultProps.onSelect,
+  style = defaultProps.style,
 }) => {
   const emojiStyle = React.useMemo(() => {
     return {
@@ -24,7 +26,7 @@ export const ReactionBarSelector: React.FC<ReactionBarSelectorProps> = ({
   }, [iconSize]);
 
   return (
-    <div style={wrapStyle}>
+    <div style={{ ...wrapStyle, ...style }}>
       {reactions.map((reaction: Reaction) => {
         return (
           <div style={emojiStyle} key={reaction.key ?? reaction.label}>
@@ -37,6 +39,7 @@ export const ReactionBarSelector: React.FC<ReactionBarSelectorProps> = ({
 };
 
 export const defaultProps: Required<ReactionBarSelectorProps> = {
+  style: {},
   reactions: [
     { node: <div>👍</div>, label: 'like', key: 'satisfaction' },
     { node: <div>❤️</div>, label: 'love', key: 'love' },
