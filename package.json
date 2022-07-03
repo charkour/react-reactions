@@ -38,7 +38,7 @@
   "scripts": {
     "build": "tsdx build",
     "build-storybook": "build-storybook",
-    "fix": "tsdx lint src test --fix",
+    "fix": "tsdx lint src --fix",
     "postinstall": "husky install",
     "lint": "tsdx lint src test",
     "prepare": "tsdx build",
@@ -59,6 +59,7 @@
     "@storybook/addon-essentials": "6.5.9",
     "@storybook/addon-links": "6.5.9",
     "@storybook/react": "6.5.9",
+    "@types/jest": "^28.1.4",
     "@types/react": "18.0.14",
     "@types/react-dom": "18.0.5",
     "autoprefixer": "10.4.7",
