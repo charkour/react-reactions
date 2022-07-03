@@ -40,7 +40,7 @@
     "build-storybook": "build-storybook",
     "fix": "tsdx lint src --fix",
     "postinstall": "husky install",
-    "lint": "tsdx lint src test",
+    "lint": "tsdx lint src",
     "prepare": "tsdx build",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable",
