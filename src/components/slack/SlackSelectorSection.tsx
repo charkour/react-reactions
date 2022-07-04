@@ -8,13 +8,12 @@ export interface SlackSelectorSectionProps {
   onSelect: (emoji: string) => void;
 }
 
-export const SlackSelectorSection: React.FC<SlackSelectorSectionProps> = ({
-  slug = '',
-  emojis,
-  onSelect,
-}) => {
+export const SlackSelectorSection = React.forwardRef<
+  HTMLDivElement,
+  SlackSelectorSectionProps
+>(({ slug = '', emojis, onSelect }, ref) => {
   return (
-    <div id={slug}>
+    <div ref={ref} id={slug}>
       <div style={titleStyle}>{sectionSlugToName(slug)}</div>
       <div style={emojisStyle}>
         {emojis.map((emoji, i) => {
@@ -30,7 +29,7 @@ export const SlackSelectorSection: React.FC<SlackSelectorSectionProps> = ({
       </div>
     </div>
   );
-};
+});
 
 const emojisStyle: React.CSSProperties = {
   display: 'flex',

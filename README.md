@@ -20,6 +20,7 @@ npm i @charkour/react-reactions
 - [x] Add ability to pass **custom icons**
 - [x] Fixed security vulnerabilities
 - [x] CJS and ESM support
+- [x] Add [ref forwarding](https://reactjs.org/docs/forwarding-refs.html) support
 - [x] Zero dependencies
 - [x] Built in Typescript and modern React (with [TSDX](https://github.com/formium/tsdx))
 - [x] Works with React 16.8+ and Next 10

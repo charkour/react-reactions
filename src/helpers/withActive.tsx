@@ -2,8 +2,10 @@ import React from 'react';
 
 // HOC that keeps track of weather or not the component is being clicked.
 // https://stackoverflow.com/a/53453431/9931154
-export const withActive = (Component: React.ElementType) => {
-  return <T,>({ ...props }: T) => {
+export const withActive = <T extends Record<string, any>>(
+  Component: React.ElementType
+) => {
+  return React.forwardRef<HTMLDivElement, T>((props, ref) => {
     const [active, setActive] = React.useState(false);
 
     const handleMouseDown = React.useCallback(() => {
@@ -14,11 +16,11 @@ export const withActive = (Component: React.ElementType) => {
     }, []);
 
     return (
-      <div onMouseDown={handleMouseDown} onMouseUp={handleMouseUp}>
+      <div ref={ref} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp}>
         <Component {...props} active={active} />
       </div>
     );
-  };
+  });
 };
 
 export default withActive;

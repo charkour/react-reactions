@@ -12,54 +12,62 @@ export interface FacebookCounterProps {
   alwaysShowOthers?: boolean;
 }
 
-export const FacebookCounter: React.FC<FacebookCounterProps> = ({
-  counters = defaultProps.counters,
-  user = defaultProps.user,
-  important = defaultProps.important,
-  onClick = defaultProps.onClick,
-  bg = defaultProps.bg,
-  variant = defaultProps.variant,
-  alwaysShowOthers = defaultProps.alwaysShowOthers,
-}) => {
-  const groups = groupBy(counters, 'emoji');
-  const names = counters.map(({ by }: CounterObject) => {
-    return by;
-  });
+export const FacebookCounter = React.forwardRef<
+  HTMLDivElement,
+  FacebookCounterProps
+>(
+  (
+    {
+      counters = defaultProps.counters,
+      user = defaultProps.user,
+      important = defaultProps.important,
+      onClick = defaultProps.onClick,
+      bg = defaultProps.bg,
+      variant = defaultProps.variant,
+      alwaysShowOthers = defaultProps.alwaysShowOthers,
+    },
+    ref
+  ) => {
+    const groups = groupBy(counters, 'emoji');
+    const names = counters.map(({ by }: CounterObject) => {
+      return by;
+    });
 
-  const nameString = [];
-  if (names.includes(user)) {
-    nameString.push('You');
-  }
-  if (important?.length) {
-    if (names.includes(important[0])) {
-      nameString.push(important[0]);
+    const nameString = [];
+    if (names.includes(user)) {
+      nameString.push('You');
     }
-    if (names.includes(important[1])) {
-      nameString.push(important[1]);
+    if (important?.length) {
+      if (names.includes(important[0])) {
+        nameString.push(important[0]);
+      }
+      if (names.includes(important[1])) {
+        nameString.push(important[1]);
+      }
     }
-  }
-  const othersCount = names.length - nameString.length;
-  if (alwaysShowOthers || othersCount > 0) {
-    nameString.push(`${othersCount} other${othersCount === 1 ? '' : 's'}`);
-  }
+    const othersCount = names.length - nameString.length;
+    if (alwaysShowOthers || othersCount > 0) {
+      nameString.push(`${othersCount} other${othersCount === 1 ? '' : 's'}`);
+    }
 
-  return (
-    <div style={counterStyle} onClick={onClick}>
-      {Object.keys(groups).map((reaction, i, reactions) => {
-        return (
-          <FacebookCounterReaction
-            key={i}
-            reaction={reaction}
-            index={reactions.length - i}
-            bg={bg}
-            variant={variant}
-          />
-        );
-      })}
-      <div style={nameStyle}>{listOfNames(nameString)}</div>
-    </div>
-  );
-};
+    return (
+      <div ref={ref} style={counterStyle} onClick={onClick}>
+        {Object.keys(groups).map((reaction, i, reactions) => {
+          return (
+            <FacebookCounterReaction
+              key={i}
+              reaction={reaction}
+              index={reactions.length - i}
+              bg={bg}
+              variant={variant}
+            />
+          );
+        })}
+        <div style={nameStyle}>{listOfNames(nameString)}</div>
+      </div>
+    );
+  }
+);
 
 export const defaultProps: Required<FacebookCounterProps> = {
   important: [],

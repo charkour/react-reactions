@@ -8,12 +8,10 @@ export interface FacebookCounterReactionProps {
   variant: 'facebook' | 'pokemon';
 }
 
-export const FacebookCounterReaction: React.FC<FacebookCounterReactionProps> = ({
-  reaction,
-  bg,
-  index,
-  variant,
-}) => {
+export const FacebookCounterReaction = React.forwardRef<
+  HTMLDivElement,
+  FacebookCounterReactionProps
+>(({ reaction, bg, index, variant }, ref) => {
   const reactionStyle: React.CSSProperties = React.useMemo(() => {
     return {
       width: '16px',
@@ -27,7 +25,7 @@ export const FacebookCounterReaction: React.FC<FacebookCounterReactionProps> = (
     };
   }, [reaction, bg, index, variant]);
 
-  return <div style={reactionStyle} />;
-};
+  return <div ref={ref} style={reactionStyle} />;
+});
 
 export default FacebookCounterReaction;

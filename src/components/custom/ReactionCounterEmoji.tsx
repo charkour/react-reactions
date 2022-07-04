@@ -7,12 +7,10 @@ export interface ReactionCounterEmojiProps {
   index: number;
 }
 
-export const ReactionCounterEmoji: React.FC<ReactionCounterEmojiProps> = ({
-  node,
-  bg,
-  iconSize,
-  index,
-}) => {
+export const ReactionCounterEmoji = React.forwardRef<
+  HTMLDivElement,
+  ReactionCounterEmojiProps
+>(({ node, bg, iconSize, index }, ref) => {
   const emojiContainerStyle: React.CSSProperties = React.useMemo(() => {
     return {
       zIndex: index,
@@ -33,12 +31,12 @@ export const ReactionCounterEmoji: React.FC<ReactionCounterEmojiProps> = ({
   }, [iconSize]);
 
   return (
-    <div style={emojiContainerStyle}>
+    <div ref={ref} style={emojiContainerStyle}>
       {React.cloneElement(node, {
         style: { ...emojiStyle, ...node.props.style },
       })}
     </div>
   );
-};
+});
 
 export default ReactionCounterEmoji;

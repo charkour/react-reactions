@@ -9,19 +9,17 @@ export interface SlackCounterGroupProps {
   active?: boolean;
   names?: string[];
 }
-export const SlackCounterGroup: React.FC<SlackCounterGroupProps> = ({
-  onSelect,
-  emoji,
-  count,
-  names,
-  active,
-}) => {
+export const SlackCounterGroup = React.forwardRef<
+  HTMLDivElement,
+  SlackCounterGroupProps
+>(({ onSelect, emoji, count, names, active }, ref) => {
   const handleClick = () => {
     onSelect && onSelect(emoji);
   };
 
   return (
     <Hover
+      ref={ref}
       hoverStyle={groupStyleActive}
       style={{ ...groupStyle, ...(active ? groupStyleActive : {}) }}
       onClick={handleClick}
@@ -37,7 +35,7 @@ export const SlackCounterGroup: React.FC<SlackCounterGroupProps> = ({
       ) : null}
     </Hover>
   );
-};
+});
 
 const groupStyle: React.CSSProperties = {
   height: '19px',

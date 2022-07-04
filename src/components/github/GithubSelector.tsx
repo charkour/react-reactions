@@ -6,28 +6,33 @@ export interface GithubSelectorProps {
   onSelect?: (shortCode: string) => void;
 }
 
-export const GithubSelector: React.FC<GithubSelectorProps> = ({
-  reactions = defaultProps.reactions,
-  onSelect = defaultProps.onSelect,
-}) => {
-  return (
-    <div style={selectorStyle}>
-      <p style={labelStyle}>Pick your reaction</p>
-      <div style={dividerStyle} />
-      <div style={emojiStyle}>
-        {reactions.map((reaction: string) => {
-          return (
-            <GithubSelectorEmoji
-              key={reaction}
-              shortCode={reaction}
-              onSelect={onSelect}
-            />
-          );
-        })}
+export const GithubSelector = React.forwardRef<
+  HTMLDivElement,
+  GithubSelectorProps
+>(
+  (
+    { reactions = defaultProps.reactions, onSelect = defaultProps.onSelect },
+    ref
+  ) => {
+    return (
+      <div ref={ref} style={selectorStyle}>
+        <p style={labelStyle}>Pick your reaction</p>
+        <div style={dividerStyle} />
+        <div style={emojiStyle}>
+          {reactions.map((reaction: string) => {
+            return (
+              <GithubSelectorEmoji
+                key={reaction}
+                shortCode={reaction}
+                onSelect={onSelect}
+              />
+            );
+          })}
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+);
 
 export const defaultProps: Required<GithubSelectorProps> = {
   reactions: ['👍', '👎', '😄', '🎉', '😕', '❤️'],

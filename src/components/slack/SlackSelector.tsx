@@ -11,26 +11,34 @@ export interface SlackSelectorProps {
   onSelect?: (id: string) => void;
 }
 
-export const SlackSelector: React.FC<SlackSelectorProps> = ({
-  scrollHeight = defaultProps.scrollHeight,
-  frequent = defaultProps.frequent,
-  removeEmojis = defaultProps.removeEmojis,
-  onSelect = defaultProps.onSelect,
-}) => {
-  return (
-    <div style={menuStyle}>
-      <SlackCSS />
-      <SlackSelectorHeader />
-      <SlackSelectorItems
-        scrollHeight={scrollHeight}
-        removeEmojis={removeEmojis}
-        frequent={frequent}
-        onSelect={onSelect}
-      />
-      <SlackSelectorFooter onSelect={onSelect} />
-    </div>
-  );
-};
+export const SlackSelector = React.forwardRef<
+  HTMLDivElement,
+  SlackSelectorProps
+>(
+  (
+    {
+      scrollHeight = defaultProps.scrollHeight,
+      frequent = defaultProps.frequent,
+      removeEmojis = defaultProps.removeEmojis,
+      onSelect = defaultProps.onSelect,
+    },
+    ref
+  ) => {
+    return (
+      <div ref={ref} style={menuStyle}>
+        <SlackCSS />
+        <SlackSelectorHeader />
+        <SlackSelectorItems
+          scrollHeight={scrollHeight}
+          removeEmojis={removeEmojis}
+          frequent={frequent}
+          onSelect={onSelect}
+        />
+        <SlackSelectorFooter onSelect={onSelect} />
+      </div>
+    );
+  }
+);
 
 const menuStyle = {
   fontFamily: '"Helvetica Neue",Helvetica,"Segoe UI",Tahoma,Arial,sans-serif',

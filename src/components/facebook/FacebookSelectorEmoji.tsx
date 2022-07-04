@@ -7,7 +7,7 @@ export interface FacebookSelectorEmojiProps {
   onSelect: (label: string) => void;
 }
 
-export const FacebookSelectorEmoji: React.FC<FacebookSelectorEmojiProps> = withActive(
+export const FacebookSelectorEmoji = withActive<FacebookSelectorEmojiProps>(
   ({ icon, label, onSelect }) => {
     const iconStyle = React.useMemo(() => {
       return {

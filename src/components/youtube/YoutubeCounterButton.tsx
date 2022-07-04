@@ -11,38 +11,47 @@ export interface YoutubeCounterButtonProps {
   // activeColor: string;
 }
 
-export const YoutubeCounterButton: React.FC<YoutubeCounterButtonProps> = ({
-  position,
-  number,
-  tooltip,
-  onClick,
-  active,
-  // activeColor,
-}) => {
-  const iconStyle = React.useMemo(() => {
-    return {
-      background: `no-repeat url(//s.ytimg.com/yts/imgbin/www-hitchhiker-2x-vflaXbyPz.webp) ${position}`,
-      backgroundSize: '573px 310px',
-      width: '20px',
-      height: '20px',
-      marginRight: '6px',
-    };
-  }, [position]);
+export const YoutubeCounterButton = React.forwardRef<
+  HTMLDivElement,
+  YoutubeCounterButtonProps
+>(
+  (
+    {
+      position,
+      number,
+      tooltip,
+      onClick,
+      active,
+      // activeColor,
+    },
+    ref
+  ) => {
+    const iconStyle = React.useMemo(() => {
+      return {
+        background: `no-repeat url(//s.ytimg.com/yts/imgbin/www-hitchhiker-2x-vflaXbyPz.webp) ${position}`,
+        backgroundSize: '573px 310px',
+        width: '20px',
+        height: '20px',
+        marginRight: '6px',
+      };
+    }, [position]);
 
-  return (
-    <Hover
-      hoverStyle={buttonStyleHover}
-      style={{ ...buttonStyle, ...(active ? buttonStyleActive : {}) }}
-      onClick={onClick}
-    >
-      <div style={iconStyle} />
-      {parseInt(number, 10).toLocaleString()}
-      <HoverStyle hoverStyle={tooltipStyleHover} style={tooltipStyle}>
-        {tooltip}
-      </HoverStyle>
-    </Hover>
-  );
-};
+    return (
+      <Hover
+        ref={ref}
+        hoverStyle={buttonStyleHover}
+        style={{ ...buttonStyle, ...(active ? buttonStyleActive : {}) }}
+        onClick={onClick}
+      >
+        <div style={iconStyle} />
+        {parseInt(number, 10).toLocaleString()}
+        <HoverStyle hoverStyle={tooltipStyleHover} style={tooltipStyle}>
+          {tooltip}
+        </HoverStyle>
+      </Hover>
+    );
+  }
+);
 
 const buttonStyle: React.CSSProperties = {
   display: 'flex',

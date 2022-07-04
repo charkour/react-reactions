@@ -5,11 +5,12 @@ export interface SlackSelectorFooterProps {
   onSelect: (id: string) => void;
 }
 
-export const SlackSelectorFooter: React.FC<SlackSelectorFooterProps> = ({
-  onSelect,
-}) => {
+export const SlackSelectorFooter = React.forwardRef<
+  HTMLDivElement,
+  SlackSelectorFooterProps
+>(({ onSelect }, ref) => {
   return (
-    <div style={footerStyle}>
+    <div ref={ref} style={footerStyle}>
       <div style={leftStyle}>Handy Reactions</div>
       <div style={rightStyle}>
         <SlackSelectorSection
@@ -19,7 +20,7 @@ export const SlackSelectorFooter: React.FC<SlackSelectorFooterProps> = ({
       </div>
     </div>
   );
-};
+});
 
 const footerStyle = {
   padding: '5px 11px',

@@ -9,34 +9,45 @@ export interface ReactionBarSelectorProps {
   style?: React.CSSProperties;
 }
 
-export const ReactionBarSelector: React.FC<ReactionBarSelectorProps> = ({
-  iconSize = defaultProps.iconSize,
-  reactions = defaultProps.reactions,
-  onSelect = defaultProps.onSelect,
-  style = defaultProps.style,
-}) => {
-  const emojiStyle = React.useMemo(() => {
-    return {
-      width: `${iconSize + 10}px`,
-      height: `${iconSize + 10}px`,
-      display: 'flex',
-      alignItems: 'center',
-      fontSize: iconSize,
-    };
-  }, [iconSize]);
+export const ReactionBarSelector = React.forwardRef<
+  HTMLDivElement,
+  ReactionBarSelectorProps
+>(
+  (
+    {
+      iconSize = defaultProps.iconSize,
+      reactions = defaultProps.reactions,
+      onSelect = defaultProps.onSelect,
+      style = defaultProps.style,
+    },
+    ref
+  ) => {
+    const emojiStyle = React.useMemo(() => {
+      return {
+        width: `${iconSize + 10}px`,
+        height: `${iconSize + 10}px`,
+        display: 'flex',
+        alignItems: 'center',
+        fontSize: iconSize,
+      };
+    }, [iconSize]);
 
-  return (
-    <div style={{ ...wrapStyle, ...style }}>
-      {reactions.map((reaction: Reaction) => {
-        return (
-          <div style={emojiStyle} key={reaction.key ?? reaction.label}>
-            <ReactionBarSelectorEmoji reaction={reaction} onSelect={onSelect} />
-          </div>
-        );
-      })}
-    </div>
-  );
-};
+    return (
+      <div ref={ref} style={{ ...wrapStyle, ...style }}>
+        {reactions.map((reaction: Reaction) => {
+          return (
+            <div style={emojiStyle} key={reaction.key ?? reaction.label}>
+              <ReactionBarSelectorEmoji
+                reaction={reaction}
+                onSelect={onSelect}
+              />
+            </div>
+          );
+        })}
+      </div>
+    );
+  }
+);
 
 export const defaultProps: Required<ReactionBarSelectorProps> = {
   style: {},

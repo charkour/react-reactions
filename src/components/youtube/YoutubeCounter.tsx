@@ -10,37 +10,45 @@ export interface YoutubeCounterProps {
   didDislike?: boolean;
 }
 
-export const YoutubeCounter: React.FC<YoutubeCounterProps> = ({
-  like = defaultProps.like,
-  dislike = defaultProps.dislike,
-  onLikeClick = defaultProps.onLikeClick,
-  onDislikeClick = defaultProps.onDislikeClick,
-  didLike = defaultProps.didLike,
-  didDislike = defaultProps.didDislike,
-}) => {
-  const handleLikeClick = () => onLikeClick();
-  const handleDislikeClick = () => onDislikeClick();
+export const YoutubeCounter = React.forwardRef<
+  HTMLDivElement,
+  YoutubeCounterProps
+>(
+  (
+    {
+      like = defaultProps.like,
+      dislike = defaultProps.dislike,
+      onLikeClick = defaultProps.onLikeClick,
+      onDislikeClick = defaultProps.onDislikeClick,
+      didLike = defaultProps.didLike,
+      didDislike = defaultProps.didDislike,
+    },
+    ref
+  ) => {
+    const handleLikeClick = () => onLikeClick();
+    const handleDislikeClick = () => onDislikeClick();
 
-  return (
-    <div style={counterStyle}>
-      <YoutubeCounterButton
-        number={like}
-        position="-66px -69px"
-        tooltip="I like this"
-        onClick={handleLikeClick}
-        active={didLike}
-      />
-      <div style={spaceStyle} />
-      <YoutubeCounterButton
-        number={dislike}
-        position="-390px -148px"
-        tooltip="I dislike this"
-        onClick={handleDislikeClick}
-        active={didDislike}
-      />
-    </div>
-  );
-};
+    return (
+      <div ref={ref} style={counterStyle}>
+        <YoutubeCounterButton
+          number={like}
+          position="-66px -69px"
+          tooltip="I like this"
+          onClick={handleLikeClick}
+          active={didLike}
+        />
+        <div style={spaceStyle} />
+        <YoutubeCounterButton
+          number={dislike}
+          position="-390px -148px"
+          tooltip="I dislike this"
+          onClick={handleDislikeClick}
+          active={didDislike}
+        />
+      </div>
+    );
+  }
+);
 
 const defaultProps: Required<YoutubeCounterProps> = {
   like: '3',

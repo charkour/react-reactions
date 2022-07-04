@@ -6,10 +6,10 @@ export interface ReactionBarSelectorEmojiProps {
   onSelect: (label: string) => void;
 }
 
-export const ReactionBarSelectorEmoji: React.FC<ReactionBarSelectorEmojiProps> = ({
-  reaction,
-  onSelect,
-}) => {
+export const ReactionBarSelectorEmoji = React.forwardRef<
+  HTMLDivElement,
+  ReactionBarSelectorEmojiProps
+>(({ reaction, onSelect }, ref) => {
   const { node, label, key } = reaction;
 
   const handleClick = () => {
@@ -17,7 +17,7 @@ export const ReactionBarSelectorEmoji: React.FC<ReactionBarSelectorEmojiProps> =
   };
 
   return (
-    <Hover style={wrapStyle}>
+    <Hover ref={ref} style={wrapStyle}>
       <HoverStyle hoverStyle={labelStyleHover} style={labelStyle}>
         {label}
       </HoverStyle>
@@ -30,7 +30,7 @@ export const ReactionBarSelectorEmoji: React.FC<ReactionBarSelectorEmojiProps> =
       </HoverStyle>
     </Hover>
   );
-};
+});
 
 const wrapStyle: React.CSSProperties = {
   padding: '5px',
