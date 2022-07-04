@@ -24,9 +24,14 @@ const meta: Meta = {
 export default meta;
 
 const Template: Story<FacebookSelectorEmojiProps> = args => {
+  const ref = React.useRef<HTMLDivElement>(null);
+  console.log(ref);
   return (
-    <div style={{ height: 30, width: 30 }}>
-      <FacebookSelectorEmoji {...args} />
+    <div style={{ height: 30, width: 30, paddingTop: 100 }}>
+      <FacebookSelectorEmoji ref={ref} {...args} onSelect={() => {
+        args.onSelect(args.label);
+        console.log(ref.current);
+      }}/>
     </div>
   );
 };
