@@ -8,18 +8,17 @@ export interface SlackSelectorHeaderTabProps {
   active?: boolean;
 }
 
-export const SlackSelectorHeaderTab: React.FC<SlackSelectorHeaderTabProps> = ({
-  onClick,
-  id,
-  icon,
-  active = false,
-}) => {
+export const SlackSelectorHeaderTab = React.forwardRef<
+  HTMLDivElement,
+  SlackSelectorHeaderTabProps
+>(({ onClick, id, icon, active = false }, ref) => {
   const handleClick = () => {
     onClick && onClick(id);
   };
 
   return (
     <Hover
+      ref={ref}
       hoverStyle={{ ...tabStyleHover }}
       style={{ ...tabStyle, ...(active ? tabStyleActive : {}) }}
       onClick={handleClick}
@@ -27,7 +26,7 @@ export const SlackSelectorHeaderTab: React.FC<SlackSelectorHeaderTabProps> = ({
       <div style={iconStyle}>{icon}</div>
     </Hover>
   );
-};
+});
 
 const tabStyle = {
   color: '#9e9ea6',

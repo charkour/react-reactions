@@ -10,9 +10,10 @@ export interface SlackSelectorHeaderProps {
   tabs?: Tab[];
 }
 
-export const SlackSelectorHeader: React.FC<SlackSelectorHeaderProps> = ({
-  tabs = [],
-}) => {
+export const SlackSelectorHeader = React.forwardRef<
+  HTMLDivElement,
+  SlackSelectorHeaderProps
+>(({ tabs = [] }, ref) => {
   const [activeString, setActiveString] = React.useState('');
 
   const handleClick = (id: string) => {
@@ -21,7 +22,7 @@ export const SlackSelectorHeader: React.FC<SlackSelectorHeaderProps> = ({
   };
 
   return (
-    <div style={headerStyle}>
+    <div ref={ref} style={headerStyle}>
       {tabs.map((tab: Tab) => {
         return (
           <SlackSelectorHeaderTab
@@ -35,7 +36,7 @@ export const SlackSelectorHeader: React.FC<SlackSelectorHeaderProps> = ({
       })}
     </div>
   );
-};
+});
 
 const headerStyle = {
   padding: '4px 0 0 7px',

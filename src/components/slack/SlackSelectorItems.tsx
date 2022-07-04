@@ -9,12 +9,10 @@ export interface SlackSelectorItemsProps {
   removeEmojis: string[];
 }
 
-export const SlackSelectorItems: React.FC<SlackSelectorItemsProps> = ({
-  scrollHeight,
-  frequent,
-  onSelect,
-  removeEmojis,
-}) => {
+export const SlackSelectorItems = React.forwardRef<
+  HTMLDivElement,
+  SlackSelectorItemsProps
+>(({ scrollHeight, frequent, onSelect, removeEmojis }, ref) => {
   const wrapStyle: React.CSSProperties = React.useMemo(() => {
     return {
       maxHeight: scrollHeight,
@@ -25,7 +23,7 @@ export const SlackSelectorItems: React.FC<SlackSelectorItemsProps> = ({
   }, [scrollHeight]);
 
   return (
-    <div style={sectionsStyle}>
+    <div ref={ref} style={sectionsStyle}>
       <div style={wrapStyle} className="frame">
         {frequent ? (
           <SlackSelectorSection
@@ -53,7 +51,7 @@ export const SlackSelectorItems: React.FC<SlackSelectorItemsProps> = ({
       </div>
     </div>
   );
-};
+});
 
 const sectionsStyle = {
   padding: '4px 4px 0',

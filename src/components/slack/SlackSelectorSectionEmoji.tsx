@@ -7,11 +7,10 @@ export interface SlackSelectorSectionEmojiProps {
   emoji: string;
 }
 
-export const SlackSelectorSectionEmoji: React.FC<SlackSelectorSectionEmojiProps> = ({
-  hoverColor,
-  onSelect,
-  emoji,
-}) => {
+export const SlackSelectorSectionEmoji = React.forwardRef<
+  HTMLDivElement,
+  SlackSelectorSectionEmojiProps
+>(({ hoverColor, onSelect, emoji }, ref) => {
   const wrapStyleHover = React.useMemo(() => {
     return { background: hoverColor };
   }, [hoverColor]);
@@ -21,11 +20,16 @@ export const SlackSelectorSectionEmoji: React.FC<SlackSelectorSectionEmojiProps>
   };
 
   return (
-    <Hover hoverStyle={wrapStyleHover} style={wrapStyle} onClick={handleClick}>
+    <Hover
+      ref={ref}
+      hoverStyle={wrapStyleHover}
+      style={wrapStyle}
+      onClick={handleClick}
+    >
       <div style={emojiStyle}>{emoji}</div>
     </Hover>
   );
-};
+});
 
 const wrapStyle = {
   width: '36px',

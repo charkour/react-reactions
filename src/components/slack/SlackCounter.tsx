@@ -10,41 +10,50 @@ export interface SlackCounterProps {
   onAdd?: () => void;
 }
 
-export const SlackCounter: React.FC<SlackCounterProps> = ({
-  counters = defaultProps.counters,
-  user = defaultProps.user,
-  onSelect = defaultProps.onSelect,
-  onAdd = defaultProps.onAdd,
-}) => {
-  const groups = groupBy(counters, 'emoji');
+export const SlackCounter = React.forwardRef<HTMLDivElement, SlackCounterProps>(
+  (
+    {
+      counters = defaultProps.counters,
+      user = defaultProps.user,
+      onSelect = defaultProps.onSelect,
+      onAdd = defaultProps.onAdd,
+    },
+    ref
+  ) => {
+    const groups = groupBy(counters, 'emoji');
 
-  return (
-    <>
-      <SlackCSS />
-      <Hover style={counterStyle}>
-        {Object.keys(groups).map((emoji: string) => {
-          const names = groups[emoji].map(({ by }: CounterObject) => {
-            return by;
-          });
-          return (
-            <div style={groupStyle} key={emoji}>
-              <SlackCounterGroup
-                emoji={emoji}
-                count={names.length}
-                names={names}
-                active={names.includes(user)}
-                onSelect={onSelect}
-              />
-            </div>
-          );
-        })}
-        <HoverStyle hoverStyle={addStyleHover} style={addStyle} onClick={onAdd}>
-          <SlackCounterGroup emoji={''} />
-        </HoverStyle>
-      </Hover>
-    </>
-  );
-};
+    return (
+      <>
+        <SlackCSS />
+        <Hover ref={ref} style={counterStyle}>
+          {Object.keys(groups).map((emoji: string) => {
+            const names = groups[emoji].map(({ by }: CounterObject) => {
+              return by;
+            });
+            return (
+              <div style={groupStyle} key={emoji}>
+                <SlackCounterGroup
+                  emoji={emoji}
+                  count={names.length}
+                  names={names}
+                  active={names.includes(user)}
+                  onSelect={onSelect}
+                />
+              </div>
+            );
+          })}
+          <HoverStyle
+            hoverStyle={addStyleHover}
+            style={addStyle}
+            onClick={onAdd}
+          >
+            <SlackCounterGroup emoji={''} />
+          </HoverStyle>
+        </Hover>
+      </>
+    );
+  }
+);
 
 export const defaultProps: Required<SlackCounterProps> = {
   counters: [

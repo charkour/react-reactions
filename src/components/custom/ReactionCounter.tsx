@@ -18,71 +18,80 @@ export interface ReactionCounterProps
   style?: React.CSSProperties;
 }
 
-export const ReactionCounter: React.FC<ReactionCounterProps> = ({
-  reactions,
-  user,
-  important,
-  className,
-  onClick,
-  iconSize = 24,
-  bg = '#FFF',
-  showReactsOnly = false,
-  showTotalOnly = false,
-  showOthersAlways = true,
-  style,
-}) => {
-  const groups = groupBy(reactions, 'label');
-  const names = reactions.map(({ by }: ReactionCounterObject) => {
-    return by;
-  });
+export const ReactionCounter = React.forwardRef<
+  HTMLDivElement,
+  ReactionCounterProps
+>(
+  (
+    {
+      reactions,
+      user,
+      important,
+      className,
+      onClick,
+      iconSize = 24,
+      bg = '#FFF',
+      showReactsOnly = false,
+      showTotalOnly = false,
+      showOthersAlways = true,
+      style,
+    },
+    ref
+  ) => {
+    const groups = groupBy(reactions, 'label');
+    const names = reactions.map(({ by }: ReactionCounterObject) => {
+      return by;
+    });
 
-  const nameString = [];
-  if (user && names.includes(user)) {
-    nameString.push('You');
-  }
-  if (important?.length) {
-    if (names.includes(important[0])) {
-      nameString.push(important[0]);
+    const nameString = [];
+    if (user && names.includes(user)) {
+      nameString.push('You');
     }
-    if (names.includes(important[1])) {
-      nameString.push(important[1]);
+    if (important?.length) {
+      if (names.includes(important[0])) {
+        nameString.push(important[0]);
+      }
+      if (names.includes(important[1])) {
+        nameString.push(important[1]);
+      }
     }
-  }
-  const othersCount = names.length - nameString.length;
-  if (showOthersAlways || othersCount > 0) {
-    nameString.push(`${othersCount} other${othersCount === 1 ? '' : 's'}`);
-  }
+    const othersCount = names.length - nameString.length;
+    if (showOthersAlways || othersCount > 0) {
+      nameString.push(`${othersCount} other${othersCount === 1 ? '' : 's'}`);
+    }
 
-  const nameStyle: React.CSSProperties = React.useMemo(() => {
-    return {
-      fontSize: `${iconSize - 8}px`,
-      marginLeft: '8px',
-    };
-  }, [iconSize]);
+    const nameStyle: React.CSSProperties = React.useMemo(() => {
+      return {
+        fontSize: `${iconSize - 8}px`,
+        marginLeft: '8px',
+      };
+    }, [iconSize]);
 
-  return (
-    <div
-      style={{ ...counterStyle, ...style }}
-      className={className}
-      onClick={onClick}
-    >
-      {Object.keys(groups).map((reaction, i, reactions) => (
-        <ReactionCounterEmoji
-          key={i}
-          bg={bg}
-          iconSize={iconSize}
-          index={reactions.length - i}
-          node={groups[reaction][0].node}
-        />
-      ))}
-      {!showReactsOnly ? (
-        <div style={nameStyle}>
-          {showTotalOnly ? names.length : listOfNames(nameString)}
-        </div>
-      ) : null}
-    </div>
-  );
-};
+    return (
+      <div
+        ref={ref}
+        style={{ ...counterStyle, ...style }}
+        className={className}
+        onClick={onClick}
+      >
+        {Object.keys(groups).map((reaction, i, reactions) => (
+          <ReactionCounterEmoji
+            key={i}
+            bg={bg}
+            iconSize={iconSize}
+            index={reactions.length - i}
+            node={groups[reaction][0].node}
+          />
+        ))}
+        {!showReactsOnly ? (
+          <div style={nameStyle}>
+            {showTotalOnly ? names.length : listOfNames(nameString)}
+          </div>
+        ) : null}
+      </div>
+    );
+  }
+);
 
 const counterStyle = {
   display: 'flex',

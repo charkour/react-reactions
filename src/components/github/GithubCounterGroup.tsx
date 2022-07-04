@@ -12,19 +12,17 @@ export interface GithubCounterGroupProps {
   active: boolean;
 }
 
-export const GithubCounterGroup: React.FC<GithubCounterGroupProps> = ({
-  emoji,
-  count,
-  onSelect,
-  names,
-  active,
-}) => {
+export const GithubCounterGroup = React.forwardRef<
+  HTMLDivElement,
+  GithubCounterGroupProps
+>(({ emoji, count, onSelect, names, active }, ref) => {
   const handleClick = () => {
     onSelect(emoji);
   };
 
   return (
     <Hover
+      ref={ref}
       style={{ ...groupStyle, ...(active ? groupStyleActive : {}) }}
       onClick={handleClick}
     >
@@ -34,7 +32,7 @@ export const GithubCounterGroup: React.FC<GithubCounterGroupProps> = ({
       </HoverStyle>
     </Hover>
   );
-};
+});
 
 const groupStyle: React.CSSProperties = {
   width: '35px',

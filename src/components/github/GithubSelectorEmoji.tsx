@@ -7,7 +7,7 @@ export interface GithubSelectorEmojiProps {
   active?: boolean;
 }
 
-export const GithubSelectorEmoji: React.FC<GithubSelectorEmojiProps> = withActive(
+export const GithubSelectorEmoji = withActive<GithubSelectorEmojiProps>(
   ({ onSelect, shortCode, active = false }) => {
     const handleClick = () => {
       onSelect(shortCode);

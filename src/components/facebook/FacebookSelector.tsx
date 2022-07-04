@@ -10,32 +10,40 @@ export interface FacebookSelectorProps {
   onSelect?: (label: string) => void;
 }
 
-export const FacebookSelector: React.FC<FacebookSelectorProps> = ({
-  iconSize = defaultProps.iconSize,
-  reactions = defaultProps.reactions,
-  variant = defaultProps.variant,
-  onSelect = defaultProps.onSelect,
-}) => {
-  const emojiStyle = React.useMemo(() => {
-    return { width: `${iconSize + 10}px` };
-  }, [iconSize]);
+export const FacebookSelector = React.forwardRef<
+  HTMLDivElement,
+  FacebookSelectorProps
+>(
+  (
+    {
+      iconSize = defaultProps.iconSize,
+      reactions = defaultProps.reactions,
+      variant = defaultProps.variant,
+      onSelect = defaultProps.onSelect,
+    },
+    ref
+  ) => {
+    const emojiStyle = React.useMemo(() => {
+      return { width: `${iconSize + 10}px` };
+    }, [iconSize]);
 
-  return (
-    <div style={wrapStyle}>
-      {reactions.map((reaction: string) => {
-        return (
-          <div style={emojiStyle} key={reaction}>
-            <FacebookSelectorEmoji
-              icon={icons.find(variant, reaction)}
-              label={reaction}
-              onSelect={onSelect}
-            />
-          </div>
-        );
-      })}
-    </div>
-  );
-};
+    return (
+      <div ref={ref} style={wrapStyle}>
+        {reactions.map((reaction: string) => {
+          return (
+            <div style={emojiStyle} key={reaction}>
+              <FacebookSelectorEmoji
+                icon={icons.find(variant, reaction)}
+                label={reaction}
+                onSelect={onSelect}
+              />
+            </div>
+          );
+        })}
+      </div>
+    );
+  }
+);
 
 export const defaultProps: Required<FacebookSelectorProps> = {
   reactions: ['like', 'love', 'haha', 'wow', 'sad', 'angry'],
