@@ -8,9 +8,16 @@ import {
   SlackCounter,
   SlackSelector,
   YoutubeCounter,
-} from '@charkour/react-reactions';
+} from '../../src';
 import React from 'react';
 import './App.css';
+
+const styles = {
+  addStyle: {
+    paddingLeft: '4px',
+    opacity: '1',
+  },
+};
 
 async function getFileFromUrl(
   url: string,
@@ -36,7 +43,7 @@ const App: React.FC = () => {
         'readme.md'
       );
       read.readAsBinaryString(file);
-      read.onloadend = function () {
+      read.onloadend = function() {
         setMarkdown(read.result as string);
         console.log(read.result);
       };
@@ -82,7 +89,7 @@ const App: React.FC = () => {
         <YoutubeCounter />
         <FacebookCounter />
         <PokemonCounter />
-        <SlackCounter />
+        <SlackCounter styles={styles} />
       </div>
     </>
   );
