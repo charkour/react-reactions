@@ -1,4 +1,7 @@
 import React from 'react';
+import SlackFontEOT from './fonts/slack-icons-Regular.eot';
+import SlackFontWOFF from './fonts/slack-icons-Regular.woff';
+import SlackFontTTF from './fonts/slack-icons-Regular.ttf';
 
 export const SlackCSS = () => {
   return (
@@ -7,10 +10,10 @@ export const SlackCSS = () => {
         __html: `
         @font-face {
           font-family: Slack;
-          src: url(fonts/slack-icons-Regular.eot);
-          src: url(fonts/slack-icons-Regular.eot?#iefix) format('embedded-opentype'),
-               url(fonts/slack-icons-Regular.woff) format('woff'),
-               url(fonts/slack-icons-Regular.ttf) format('truetype')
+          src: url(${SlackFontEOT});
+          src: url(${SlackFontEOT}?#iefix) format('embedded-opentype'),
+               url(${SlackFontWOFF}) format('woff'),
+               url(${SlackFontTTF}) format('truetype')
         }
         .frame::-webkit-scrollbar {
             -webkit-appearance: none;
