@@ -36,7 +36,7 @@ export const SlackCounter = React.forwardRef<HTMLDivElement, SlackCounterProps>(
     ref
   ) => {
     const groups = groupBy(counters, 'emoji');
-    const mergedStyles = deepMerge(
+    const mergedStyles: styleProps = deepMerge(
       defaultProps.styles,
       styles || {},
       (key: any, a: any, b: any) =>
@@ -63,7 +63,7 @@ export const SlackCounter = React.forwardRef<HTMLDivElement, SlackCounterProps>(
             );
           })}
           <HoverStyle
-            hoverStyle={mergedStyles.addStyleHover}
+            hoverStyle={mergedStyles.addStyleHover || {}}
             style={mergedStyles.addStyle}
             onClick={onAdd}
           >
@@ -89,7 +89,7 @@ const groupStyle = {
   marginRight: '4px',
 };
 const addStyleHover = {
-  opacity: 1,
+  opacity: '1',
 };
 
 export const defaultProps: Required<SlackCounterProps> = {
