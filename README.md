@@ -125,7 +125,7 @@ const Component = () => {
 
 `onSelect`: Function callback when emoji is selected
 
-**Fonts**: To use the Slack fonts, download the font files here and include them in `public/fonts`.
+**Fonts**: To use the Slack fonts, download the font files [here](https://github.com/charkour/react-reactions/tree/main/example/public/fonts) and include them in `public/fonts`.
 
 ---
 
@@ -341,7 +341,7 @@ const Component = () => {
 
 `onAdd`: Function callback when add reaction is clicked
 
-**Fonts**: To use the Slack fonts, download the font files here and include them in `public/fonts`.
+**Fonts**: To use the Slack fonts, download the font files [here](https://github.com/charkour/react-reactions/tree/main/example/public/fonts) and include them in `public/fonts`.
 
 ---
 
