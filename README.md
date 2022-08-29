@@ -125,6 +125,8 @@ const Component = () => {
 
 `onSelect`: Function callback when emoji is selected
 
+**Fonts** To use the Slack fonts, download the font files here and include them in `public/fonts`.
+
 ---
 
 ### Github Selector
@@ -338,6 +340,8 @@ const Component = () => {
 `onSelect`: Function callback when emoji is selected
 
 `onAdd`: Function callback when add reaction is clicked
+
+**Fonts** To use the Slack fonts, download the font files here and include them in `public/fonts`.
 
 ---
 
