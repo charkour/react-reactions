@@ -1,14 +1,28 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 import { CounterObject, groupBy, Hover, HoverStyle } from '../../helpers';
 import SlackCounterGroup from './SlackCounterGroup';
 import SlackCSS from './SlackCSS';
 
+export interface styleProps {
+  addStyle?: CSSProperties;
+  counterStyle?: CSSProperties;
+  groupStyle?: CSSProperties;
+  addStyleHover?: CSSProperties;
+}
 export interface SlackCounterProps {
   counters?: CounterObject[];
   user?: string;
   onSelect?: (emoji: string) => void;
   onAdd?: () => void;
+  styles?: styleProps;
 }
+const deepMerge = (a: styleProps, b: styleProps, fn: any) =>
+  // @ts-ignore
+  [...new Set([...Object.keys(a), ...Object.keys(b)])].reduce(
+    // @ts-ignore
+    (acc, key) => ({ ...acc, [key]: fn(key, a[key], b[key]) }),
+    {}
+  );
 
 export const SlackCounter = React.forwardRef<HTMLDivElement, SlackCounterProps>(
   (
@@ -17,21 +31,27 @@ export const SlackCounter = React.forwardRef<HTMLDivElement, SlackCounterProps>(
       user = defaultProps.user,
       onSelect = defaultProps.onSelect,
       onAdd = defaultProps.onAdd,
+      styles,
     },
     ref
   ) => {
     const groups = groupBy(counters, 'emoji');
-
+    const mergedStyles: styleProps = deepMerge(
+      defaultProps.styles,
+      styles || {},
+      (key: any, a: any, b: any) =>
+        key === 'a' ? a && b : Object.assign({}, a, b)
+    );
     return (
       <>
         <SlackCSS />
-        <Hover ref={ref} style={counterStyle}>
+        <Hover ref={ref} style={mergedStyles.counterStyle}>
           {Object.keys(groups).map((emoji: string) => {
             const names = groups[emoji].map(({ by }: CounterObject) => {
               return by;
             });
             return (
-              <div style={groupStyle} key={emoji}>
+              <div style={mergedStyles.groupStyle} key={emoji}>
                 <SlackCounterGroup
                   emoji={emoji}
                   count={names.length}
@@ -43,8 +63,8 @@ export const SlackCounter = React.forwardRef<HTMLDivElement, SlackCounterProps>(
             );
           })}
           <HoverStyle
-            hoverStyle={addStyleHover}
-            style={addStyle}
+            hoverStyle={mergedStyles.addStyleHover || {}}
+            style={mergedStyles.addStyle}
             onClick={onAdd}
           >
             <SlackCounterGroup emoji={''} />
@@ -54,6 +74,23 @@ export const SlackCounter = React.forwardRef<HTMLDivElement, SlackCounterProps>(
     );
   }
 );
+
+const counterStyle = {
+  display: 'flex',
+};
+const addStyle = {
+  cursor: 'pointer',
+  fontFamily: 'Slack',
+  paddingLeft: '8px',
+  opacity: '0',
+  transition: 'opacity 0.1s ease-in-out',
+};
+const groupStyle = {
+  marginRight: '4px',
+};
+const addStyleHover = {
+  opacity: '1',
+};
 
 export const defaultProps: Required<SlackCounterProps> = {
   counters: [
@@ -73,23 +110,12 @@ export const defaultProps: Required<SlackCounterProps> = {
   onAdd: () => {
     console.log('add');
   },
-};
-
-const counterStyle = {
-  display: 'flex',
-};
-const addStyle = {
-  cursor: 'pointer',
-  fontFamily: 'Slack',
-  paddingLeft: '8px',
-  opacity: '0',
-  transition: 'opacity 0.1s ease-in-out',
-};
-const groupStyle = {
-  marginRight: '4px',
-};
-const addStyleHover = {
-  opacity: '1',
+  styles: {
+    counterStyle,
+    addStyle,
+    groupStyle,
+    addStyleHover,
+  },
 };
 
 export default SlackCounter;
